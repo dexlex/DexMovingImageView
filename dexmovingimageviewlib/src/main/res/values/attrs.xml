@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2014 Diego Grancini
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <attr name="transition_duration_millis" format="reference|integer" />
+    <attr name="still_image_duration_millis" format="reference|integer" />
+    <attr name="images_array" format="reference" />
+    <attr name="loop" format="boolean" />
+
+    <declare-styleable name="DexCrossFadeImageView">
+        <attr name="transition_duration_millis" />
+        <attr name="still_image_duration_millis" />
+        <attr name="images_array" />
+        <attr name="loop" />
+    </declare-styleable>
+
+    <declare-styleable name="DexMovingImageView">
+        <attr name="transition_duration_millis" />
+        <attr name="still_image_duration_millis" />
+        <attr name="images_array" />
+        <attr name="drawer">
+            <flag name="scale" value="0" />
+            <flag name="translate" value="1" />
+            <flag name="rotate" value="2" />
+        </attr>
+        <attr name="generator" format="enum|string">
+            <enum name="base" value="0" />
+            <enum name="floating" value="1" />
+        </attr>
+        <attr name="evaluator" format="enum|string">
+            <enum name="scrollBased" value="0" />
+            <enum name="timeBased" value="1" />
+            <enum name="gyroscopeBased" value="2" />
+        </attr>
+        <attr name="zoom" format="reference|float" />
+        <attr name="angle" format="reference|float" />
+    </declare-styleable>
+</resources>

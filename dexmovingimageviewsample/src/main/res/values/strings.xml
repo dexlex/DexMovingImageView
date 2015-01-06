@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright 2014 Diego Grancini
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <string name="app_name">DexMovingImageView</string>
+    <string name="menu_share">Share</string>
+    <string name="action_settings">Settings</string>
+    <string name="sample_title">Title</string>
+    <string name="sample_text">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <!-- SECTIONS -->
+    <string-array name="sections_titles">
+        <item>Inside Vertical Scrollers</item>
+        <item>Inside Horizontal Scrollers</item>
+        <item>Using Remote Images Libraries</item>
+        <item>Custom Drawers</item>
+        <item>Time Based Drawers</item>
+        <item>Cross Fade Images</item>
+    </string-array>
+    <string-array name="vertical_titles">
+        <item>RECYCLER VIEW</item>
+        <item>SCROLL VIEW</item>
+        <item>LIST VIEW</item>
+        <item>GRID VIEW</item>
+    </string-array>
+    <string-array name="horizontal_titles">
+        <item>RECYCLER VIEW</item>
+        <item>HORIZONTAL SCROLL VIEW</item>
+    </string-array>
+    <string-array name="remote_image_titles">
+        <item>PICASSO</item>
+        <item>UNIVERSAL IMAGE LOADER</item>
+    </string-array>
+    <string-array name="custom_titles">
+        <item>SLIDER</item>
+        <item>HEART BEAT</item>
+    </string-array>
+    <string-array name="auto_mover_titles">
+        <item>AUTOMATIC MOVES</item>
+    </string-array>
+    <string-array name="cross_fade_titles">
+        <item>CROSS FADE</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <array name="images">
+        <item>@drawable/material</item>
+        <item>@drawable/material2</item>
+        <item>@drawable/material3</item>
+        <item>@drawable/material4</item>
+        <item>@drawable/material5</item>
+    </array>
+
+</resources>
