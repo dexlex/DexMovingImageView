@@ -12,7 +12,7 @@ DMIV aims to provide a flexible and customizable instrument for automated images
  * Android 1.5+ support
 
 ## Downloads
- * [![Demo app](https://github.com/dexlex/DexMovingImageView/blob/master/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.movingimageview)
+[![Demo app](https://github.com/dexlex/DexMovingImageView/blob/master/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.movingimageview)
 
 ##References
 * [Quick setup](https://github.com/dexlex/DexMovingImageView/wiki/Quinck-Setup)
