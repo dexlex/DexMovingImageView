@@ -26,6 +26,26 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 ## Usage
 
 ###Simple
+####DexCrossFadeImageView
+```xml
+<it.dex.movingimageviewlib.DexCrossFadeImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/material5"
+        dex:images_array="@array/images"
+        dex:loop="true"
+        dex:still_image_duration_millis="1000"
+        dex:transition_duration_millis="500" />
+```
+
+```java
+DexCrossFadeImageView dexCrossFadeImageView = (DexCrossFadeImageView) view.findViewById(R.id.image);
+dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
+```
+
+####DexMovigImageView
 
 ###Advanced
 ####Evaluators
