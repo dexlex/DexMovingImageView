@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public class BaseValuesGenerator extends ValuesGenerator {
     }
 
     @Override
-    public float getX(int x) {
+    public float getX(float x) {
         float width = getParameters().getWidth();
         float deviceWidth = getParameters().getDeviceWidth();
         float zoom = getParameters().getZoom();
@@ -39,7 +39,7 @@ public class BaseValuesGenerator extends ValuesGenerator {
     }
 
     @Override
-    public float getY(int y) {
+    public float getY(float y) {
         float height = getParameters().getHeight();
         float deviceHeight = getParameters().getDeviceHeight();
         float zoom = getParameters().getZoom();

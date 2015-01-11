@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,16 +20,30 @@ package it.dex.movingimageviewlib.parameters;
  * DexMoveImageView created by Diego on 13/12/2014.
  */
 public class Parameters {
+    public static final float MAX_ZOOM = 4.0f;
+    public static final float MIN_ZOOM = 0.0f;
+    public static final float MAX_ANGLE = 360f;
+    public static final float MIN_ANGLE = 0f;
+    public static final float MAX_SPEED = 100f;
+    public static final float MIN_SPEED = 10f;
+
     private int deviceWidth;
     private int deviceHeight;
-    private int paddingLeft;
-    private int paddingTop;
-    private int paddingRight;
-    private int paddingBottom;
     private int height;
     private int width;
+
     private float zoom = 2.0f;
-    private float angle = 45;
+    private float minZoom = MIN_ZOOM;
+    private float maxZoom = MAX_ZOOM;
+
+    private float angle = 0;
+    private float minAngle = MIN_ANGLE;
+    private float maxAngle = MAX_ANGLE;
+
+    private float speed = 30;
+    private float minSpeed = MIN_SPEED;
+    private float maxSpeed = MAX_SPEED;
+
     private float x;
     private float y;
 
@@ -38,7 +52,8 @@ public class Parameters {
     }
 
     public void setZoom(float zoom) {
-        this.zoom = zoom;
+        if (zoom >= getMinZoom() && zoom <= getMaxZoom())
+            this.zoom = zoom;
     }
 
     public float getAngle() {
@@ -46,39 +61,8 @@ public class Parameters {
     }
 
     public void setAngle(float angle) {
-        this.angle = angle;
-    }
-
-    public int getPaddingLeft() {
-        return paddingLeft;
-    }
-
-    public void setPaddingLeft(int paddingLeft) {
-        this.paddingLeft = paddingLeft;
-    }
-
-    public int getPaddingTop() {
-        return paddingTop;
-    }
-
-    public void setPaddingTop(int paddingTop) {
-        this.paddingTop = paddingTop;
-    }
-
-    public int getPaddingRight() {
-        return paddingRight;
-    }
-
-    public void setPaddingRight(int paddingRight) {
-        this.paddingRight = paddingRight;
-    }
-
-    public int getPaddingBottom() {
-        return paddingBottom;
-    }
-
-    public void setPaddingBottom(int paddingBottom) {
-        this.paddingBottom = paddingBottom;
+        if ((angle >= getMinAngle() && angle <= getMaxAngle()) || (angle <= -getMinAngle() && angle >= -getMaxAngle()))
+            this.angle = angle;
     }
 
     public int getHeight() {
@@ -127,5 +111,80 @@ public class Parameters {
 
     public void setDeviceHeight(int deviceHeight) {
         this.deviceHeight = deviceHeight;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        if (speed >= getMinSpeed() && speed <= getMaxSpeed())
+            this.speed = speed;
+    }
+
+    public float getMinZoom() {
+        return minZoom;
+    }
+
+    public void setMinZoom(float minZoom) {
+        if (minZoom <= MAX_ZOOM && minZoom >= MIN_ZOOM)
+            this.minZoom = minZoom;
+        else
+            throw new IllegalArgumentException("MinZoom value must be <= " + MAX_ZOOM + " and >= " + MIN_ZOOM + ". " + minZoom + " is not correct.");
+    }
+
+    public float getMaxZoom() {
+        return maxZoom;
+    }
+
+    public void setMaxZoom(float maxZoom) {
+        if (maxZoom <= MAX_ZOOM && maxZoom >= MIN_ZOOM)
+            this.maxZoom = maxZoom;
+        else
+            throw new IllegalArgumentException("MaxZoom value must be <= " + MAX_ZOOM + " and >= " + MIN_ZOOM + ". " + maxZoom + " is not correct.");
+    }
+
+    public float getMinAngle() {
+        return minAngle;
+    }
+
+    public void setMinAngle(float minAngle) {
+        if (minAngle <= MAX_ANGLE && minAngle >= MIN_ANGLE)
+            this.minAngle = minAngle;
+        else
+            throw new IllegalArgumentException("MinAngle value must be <= " + MAX_ANGLE + " and >= " + MIN_ANGLE + ". " + minAngle + " is not correct.");
+    }
+
+    public float getMaxAngle() {
+        return maxAngle;
+    }
+
+    public void setMaxAngle(float maxAngle) {
+        if (maxAngle <= MAX_ANGLE && maxAngle >= MIN_ANGLE)
+            this.maxAngle = maxAngle;
+        else
+            throw new IllegalArgumentException("MaxAngle value must be <= " + MAX_ANGLE + " and >= " + MIN_ANGLE + ". " + maxAngle + " is not correct.");
+    }
+
+    public float getMinSpeed() {
+        return minSpeed;
+    }
+
+    public void setMinSpeed(float minSpeed) {
+        if (minSpeed <= MAX_SPEED && minSpeed >= MIN_SPEED)
+            this.minSpeed = minSpeed;
+        else
+            throw new IllegalArgumentException("MinSpeed value must be <= " + MAX_SPEED + " and >= " + MIN_SPEED + ". " + minSpeed + " is not correct.");
+    }
+
+    public float getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(float maxSpeed) {
+        if (maxSpeed <= MAX_SPEED && maxSpeed >= MIN_SPEED)
+            this.maxSpeed = maxSpeed;
+        else
+            throw new IllegalArgumentException("MaxSpeed value must be <= " + MAX_SPEED + " and >= " + MIN_SPEED + ". " + maxSpeed + " is not correct.");
     }
 }

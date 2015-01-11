@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,10 @@ public class GyroscopeEvaluator extends Evaluator implements SensorEventListener
         super(view);
     }
 
+    public GyroscopeEvaluator(View view, OnEventOccurred onEventOccurred) {
+        super(view, onEventOccurred);
+    }
+
     @Override
     protected void onCreate(View view) {
         mSensorManager = (SensorManager) view.getContext().getSystemService(Context.SENSOR_SERVICE);
@@ -47,22 +51,17 @@ public class GyroscopeEvaluator extends Evaluator implements SensorEventListener
     }
 
     @Override
-    public int evaluateX(View view) {
+    public float evaluateX(View view) {
         return (int) (x * view.getWidth());
     }
 
     @Override
-    public int evaluateY(View view) {
+    public float evaluateY(View view) {
         return (int) (y * view.getHeight());
     }
 
     @Override
     public float evaluateAngle(View view, float defaultAngle) {
-        return (float) (z * 180d / Math.PI);
-    }
-
-    @Override
-    public float evaluateZoom(View view, float defaultZoom) {
         return (float) (z * 180d / Math.PI);
     }
 
@@ -99,6 +98,11 @@ public class GyroscopeEvaluator extends Evaluator implements SensorEventListener
             this.y = -1f;
 
         this.z += angularVelocity * timeDiff;
+        if (this.x == 0 && this.y == 0 && this.z == 0) {
+            loopCount++;
+            if (getOnEventOccurred() != null && isNotifyEvent())
+                getOnEventOccurred().onEventOccurred(getView(), this, loopCount);
+        }
         getView().invalidate();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ package it.dex.movingimageviewlib.evaluating;
  * Created by Diego on 08/12/2014.
  */
 public enum EVALUATORS {
-    SCROLL(0), TIME(1), GYROSCOPE(2);
+    SIMPLE(0), SCROLL(1), TIME(2), GYROSCOPE(4);
 
     private int type;
 
@@ -28,13 +28,15 @@ public enum EVALUATORS {
         this.type = type;
     }
 
-    public static EVALUATORS map(int type) throws IllegalArgumentException{
+    public static EVALUATORS map(int type) throws IllegalArgumentException {
         switch (type) {
             case 0:
-                return SCROLL;
+                return SIMPLE;
             case 1:
-                return TIME;
+                return SCROLL;
             case 2:
+                return TIME;
+            case 3:
                 return GYROSCOPE;
             default:
                 throw new IllegalArgumentException();

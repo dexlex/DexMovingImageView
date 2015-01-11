@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright 2014 Diego Grancini
+  ~ Copyright 2014-2015 Diego Grancini
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -69,5 +69,19 @@
         <item>@drawable/material4</item>
         <item>@drawable/material5</item>
     </array>
+
+    <string-array name="evaluators">
+        <item>Simple</item>
+        <item>Time</item>
+        <item>Scroll</item>
+        <item>Gyroscope</item>
+    </string-array>
+
+    <string-array name="generators">
+        <item>Base</item>
+        <item>Angled</item>
+        <item>Ranged</item>
+        <item>Smooth</item>
+    </string-array>
 
 </resources>

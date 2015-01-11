@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ package it.dex.movingimageviewlib.generating;
  * Created by Diego on 08/12/2014.
  */
 public enum VALUESGENERATORS {
-    BASE(0), ANGLED(1);
+    BASE(0), ANGLED(1), RANGED(2), SMOOTH(3);
 
     private int type;
 
@@ -28,12 +28,16 @@ public enum VALUESGENERATORS {
         this.type = type;
     }
 
-    public static VALUESGENERATORS map(int type) throws IllegalArgumentException{
+    public static VALUESGENERATORS map(int type) throws IllegalArgumentException {
         switch (type) {
             case 0:
                 return BASE;
             case 1:
                 return ANGLED;
+            case 2:
+                return RANGED;
+            case 3:
+                return SMOOTH;
             default:
                 throw new IllegalArgumentException();
         }

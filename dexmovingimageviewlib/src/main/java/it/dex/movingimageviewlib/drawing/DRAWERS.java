@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,14 @@ package it.dex.movingimageviewlib.drawing;
  * Created by Diego on 08/12/2014.
  */
 public enum DRAWERS {
-    SCALE(0), TRANSLATE(0), ROTATE(1);
+    SCALE(0, "Scale"), TRANSLATE(1, "Translate"), ROTATE(2, "Rotate");
 
     private int type;
+    private String defaultName;
 
-    DRAWERS(int type) {
+    DRAWERS(int type, String defaultName) {
         this.type = type;
+        this.defaultName = defaultName;
     }
 
     public static DRAWERS map(int type) throws IllegalArgumentException {
@@ -43,5 +45,9 @@ public enum DRAWERS {
 
     public int getType() {
         return type;
+    }
+
+    public String getDefaultName() {
+        return defaultName;
     }
 }

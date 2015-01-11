@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright 2014 Diego Grancini
+  ~ Copyright 2014-2015 Diego Grancini
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@
         <attr name="transition_duration_millis" />
         <attr name="still_image_duration_millis" />
         <attr name="images_array" />
+
         <attr name="drawer">
             <flag name="scale" value="0" />
             <flag name="translate" value="1" />
@@ -38,14 +39,24 @@
         </attr>
         <attr name="generator" format="enum|string">
             <enum name="base" value="0" />
-            <enum name="floating" value="1" />
+            <enum name="angled" value="1" />
+            <enum name="ranged" value="2" />
+            <enum name="smooth" value="3" />
         </attr>
         <attr name="evaluator" format="enum|string">
-            <enum name="scrollBased" value="0" />
-            <enum name="timeBased" value="1" />
-            <enum name="gyroscopeBased" value="2" />
+            <enum name="simple" value="0" />
+            <enum name="scrollBased" value="1" />
+            <enum name="timeBased" value="2" />
+            <enum name="gyroscopeBased" value="3" />
         </attr>
         <attr name="zoom" format="reference|float" />
+        <attr name="minZoom" format="reference|float" />
+        <attr name="maxZoom" format="reference|float" />
         <attr name="angle" format="reference|float" />
+        <attr name="minAngle" format="reference|float" />
+        <attr name="maxAngle" format="reference|float" />
+        <attr name="speed" format="reference|float" />
+        <attr name="minSpeed" format="reference|float" />
+        <attr name="maxSpeed" format="reference|float" />
     </declare-styleable>
 </resources>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package it.dex.movingimageview;
+package it.dex.movingimageview.data;
 
 import java.io.Serializable;
 
@@ -51,6 +51,6 @@ public class SubSection implements Serializable {
 
     public enum SUBSECTION_TYPE {
         RECYCLER_VIEW_HORIZONTAL, RECYCLER_VIEW_VERTICAL, RECYCLER_VIEW_VERTICAL_PICASSO, RECYCLER_VIEW_VERTICAL_UIL,
-        SCROLL_VIEW, LIST_VIEW, GRID_VIEW, HORIZONTAL_SCROLL_VIEW, CROSS_FADE_VIEW, CROSS_FADE_TESTER
+        SCROLL_VIEW, LIST_VIEW, GRID_VIEW, HORIZONTAL_SCROLL_VIEW, CROSS_FADE_VIEW, CROSS_FADE_TESTER, MOVING_TESTER
     }
 }

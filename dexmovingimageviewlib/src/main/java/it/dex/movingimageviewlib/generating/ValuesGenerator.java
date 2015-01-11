@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,16 +28,16 @@ public abstract class ValuesGenerator {
         setParameters(parameters);
     }
 
-    public abstract float getX(int x);
+    public abstract float getX(float x);
 
-    public abstract float getY(int y);
+    public abstract float getY(float y);
 
-    public float getZoom(float zoom){
-        return zoom;
+    public float getZoom(float zoom, float defaultZoom) {
+        return defaultZoom;
     }
 
-    public float getAngle(float angle){
-        return  angle;
+    public float getAngle(float angle, float defaultAngle) {
+        return defaultAngle;
     }
 
     public Parameters getParameters() {

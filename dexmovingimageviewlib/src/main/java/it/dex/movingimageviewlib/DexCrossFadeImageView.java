@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public class DexCrossFadeImageView extends ImageView {
     private int currentPosition = 0;
     private boolean loop = false;
     private Drawable[] drawables;
+    private boolean play = false;
 
     public DexCrossFadeImageView(Context context) {
         this(context, null);
@@ -78,22 +79,34 @@ public class DexCrossFadeImageView extends ImageView {
         }
     }
 
-    public void start() {
-        postDelayed(new Runnable() {
+    private void play() {
+        if (isPlaying())
+            postDelayed(new Runnable() {
 
-            @Override
-            public void run() {
-                if (drawables.length > currentPosition) {
-                    setFadingImageDrawable(drawables[currentPosition]);
-                    currentPosition++;
-                    start();
-                } else {
-                    currentPosition = 0;
-                    if (isLoop())
-                        start();
+                @Override
+                public void run() {
+                    if (drawables.length > currentPosition) {
+                        setFadingImageDrawable(drawables[currentPosition]);
+                        currentPosition++;
+                        play();
+                    } else {
+                        currentPosition = 0;
+                        if (isLoop())
+                            play();
+                    }
                 }
-            }
-        }, stillImageDurationMillis);
+            }, stillImageDurationMillis);
+    }
+
+    public void start() {
+        if (!isPlaying()) {
+            setPlaying(true);
+            play();
+        }
+    }
+
+    public void stop() {
+        setPlaying(false);
     }
 
     public void start(int transitionDurationMillis, int stillImageDurationMillis) {
@@ -210,5 +223,13 @@ public class DexCrossFadeImageView extends ImageView {
 
     public void setImageDrawables(Drawable[] drawables) {
         this.drawables = drawables;
+    }
+
+    public boolean isPlaying() {
+        return play;
+    }
+
+    public void setPlaying(boolean play) {
+        this.play = play;
     }
 }

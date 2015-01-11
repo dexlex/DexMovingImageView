@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,11 +35,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import it.dex.movingimageview.AppConfiguration;
-import it.dex.movingimageview.DividerItemDecoration;
 import it.dex.movingimageview.R;
-import it.dex.movingimageview.Section;
 import it.dex.movingimageview.adapters.NavigationDrawerAdapter;
+import it.dex.movingimageview.data.AppConfiguration;
+import it.dex.movingimageview.data.Section;
+import it.dex.movingimageview.utils.DividerItemDecoration;
 
 public class NavigationDrawerFragment extends Fragment {
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";

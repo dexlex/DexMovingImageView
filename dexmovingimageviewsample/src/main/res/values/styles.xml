@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2014 Diego Grancini
+  ~ Copyright 2014-2015 Diego Grancini
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -57,9 +57,9 @@
 
     <style name="DexScrollImageViewStyle">
         <item name="zoom">2</item>
-        <item name="angle">45</item>
+        <item name="angle">0</item>
         <item name="drawer">scale|translate</item>
-        <item name="generator">floating</item>
+        <item name="generator">angled</item>
         <item name="evaluator">scrollBased</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

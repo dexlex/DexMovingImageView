@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,18 +31,22 @@ public class ScrollEvaluator extends Evaluator implements ViewTreeObserver.OnScr
         super(view);
     }
 
+    public ScrollEvaluator(View view, OnEventOccurred onEventOccurred) {
+        super(view, onEventOccurred);
+    }
+
     @Override
     public void onCreate(View view) {
         view.getViewTreeObserver().addOnScrollChangedListener(this);
     }
 
     @Override
-    public int evaluateX(View view) {
+    public float evaluateX(View view) {
         return viewLocation[0];
     }
 
     @Override
-    public int evaluateY(View view) {
+    public float evaluateY(View view) {
         return viewLocation[1];
     }
 
@@ -54,6 +58,12 @@ public class ScrollEvaluator extends Evaluator implements ViewTreeObserver.OnScr
     @Override
     public void onScrollChanged() {
         getView().getLocationInWindow(viewLocation);
+        if (viewLocation[0] + getView().getWidth() / 2 == getView().getContext().getResources().getDisplayMetrics().widthPixels / 2 &&
+                viewLocation[1] + getView().getHeight() / 2 == getView().getContext().getResources().getDisplayMetrics().heightPixels / 2) {
+            loopCount++;
+            if (getOnEventOccurred() != null && isNotifyEvent())
+                getOnEventOccurred().onEventOccurred(getView(), this, loopCount);
+        }
         getView().invalidate();
     }
 }

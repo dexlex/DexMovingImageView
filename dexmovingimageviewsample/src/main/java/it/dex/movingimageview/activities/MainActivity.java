@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package it.dex.movingimageview;
+package it.dex.movingimageview.activities;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -28,6 +28,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import it.dex.movingimageview.R;
+import it.dex.movingimageview.data.Section;
 import it.dex.movingimageview.fragments.NavigationDrawerFragment;
 import it.dex.movingimageview.fragments.ViewPagerFragment;
 
@@ -90,8 +92,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public void onNavigationDrawerItemSelected(Section section) {
-            Fragment fragment = ViewPagerFragment.newInstance(section);
-            getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
+        Fragment fragment = ViewPagerFragment.newInstance(section);
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
     }
 
     @Override

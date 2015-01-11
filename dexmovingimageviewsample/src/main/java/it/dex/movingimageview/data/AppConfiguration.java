@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package it.dex.movingimageview;
+package it.dex.movingimageview.data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class AppConfiguration {
     private AppConfiguration() {
         sections.add(new Section("DexMovingImageView", Section.SECTION_TYPE.HEADER));
 
-        Section movingVerticalScrollers = new Section("Vertical Scroller", Section.SECTION_TYPE.SUBSECTION);
+        Section movingVerticalScrollers = new Section("Vertical Scrollers", Section.SECTION_TYPE.SUBSECTION);
         List<SubSection> movingVerticalScrollersSubSections = new ArrayList<>();
         movingVerticalScrollersSubSections.add(new SubSection("RECYCLER VIEW", SubSection.SUBSECTION_TYPE.RECYCLER_VIEW_VERTICAL));
         movingVerticalScrollersSubSections.add(new SubSection("SCROLL VIEW", SubSection.SUBSECTION_TYPE.SCROLL_VIEW));
@@ -38,21 +38,25 @@ public class AppConfiguration {
         movingVerticalScrollers.setSubsectionTypeList(movingVerticalScrollersSubSections);
         sections.add(movingVerticalScrollers);
 
-        Section movingHorizontalScrollers = new Section("Horizontal Scroller", Section.SECTION_TYPE.SUBSECTION);
+        Section movingHorizontalScrollers = new Section("Horizontal Scrollers", Section.SECTION_TYPE.SUBSECTION);
         List<SubSection> movingHorizontalScrollersSubSections = new ArrayList<>();
-        movingHorizontalScrollersSubSections.add(new SubSection("RECYCLER VIEW", SubSection.SUBSECTION_TYPE.RECYCLER_VIEW_HORIZONTAL));
+        movingHorizontalScrollersSubSections.add(new SubSection("HORIZONTAL RECYCLER VIEW", SubSection.SUBSECTION_TYPE.RECYCLER_VIEW_HORIZONTAL));
         movingHorizontalScrollersSubSections.add(new SubSection("HORIZONTAL SCROLL VIEW", SubSection.SUBSECTION_TYPE.HORIZONTAL_SCROLL_VIEW));
         movingHorizontalScrollers.setSubsectionTypeList(movingHorizontalScrollersSubSections);
         sections.add(movingHorizontalScrollers);
 
-        Section movingRemoteScrollers = new Section("Horizontal Scroller", Section.SECTION_TYPE.SUBSECTION);
+        Section movingRemoteScrollers = new Section("Remote Images", Section.SECTION_TYPE.SUBSECTION);
         List<SubSection> movingRemoteScrollersSubSections = new ArrayList<>();
         movingRemoteScrollersSubSections.add(new SubSection("PICASSO", SubSection.SUBSECTION_TYPE.RECYCLER_VIEW_VERTICAL_PICASSO));
         movingRemoteScrollersSubSections.add(new SubSection("UNIVERSAL IMAGE LOADER", SubSection.SUBSECTION_TYPE.RECYCLER_VIEW_VERTICAL_UIL));
         movingRemoteScrollers.setSubsectionTypeList(movingRemoteScrollersSubSections);
         sections.add(movingRemoteScrollers);
 
-        sections.add(new Section("Tester", Section.SECTION_TYPE.SUBSECTION));
+        Section movingTester = new Section("DexMovingImageView Tester", Section.SECTION_TYPE.SUBSECTION);
+        List<SubSection> movingTesterSubSections = new ArrayList<>();
+        movingTesterSubSections.add(new SubSection("DEXMOVINGIMAGEVIEW TESTER", SubSection.SUBSECTION_TYPE.MOVING_TESTER));
+        movingTester.setSubsectionTypeList(movingTesterSubSections);
+        sections.add(movingTester);
 
         sections.add(new Section("DexCrossFadeImageView", Section.SECTION_TYPE.HEADER));
 
@@ -62,11 +66,11 @@ public class AppConfiguration {
         crossFadeSingleImage.setSubsectionTypeList(crossFadeSingleImageSubSections);
         sections.add(crossFadeSingleImage);
 
-        Section crossFadeMultipleImage = new Section("Multiple Image", Section.SECTION_TYPE.SUBSECTION);
-        List<SubSection> crossFadeMultipleImageSubSections = new ArrayList<>();
-        crossFadeMultipleImageSubSections.add(new SubSection("MULTIPLE IMAGES", SubSection.SUBSECTION_TYPE.CROSS_FADE_TESTER));
-        crossFadeMultipleImage.setSubsectionTypeList(crossFadeMultipleImageSubSections);
-        sections.add(crossFadeMultipleImage);
+        Section crossFadeTester = new Section("DexCrossFadeImageView Tester", Section.SECTION_TYPE.SUBSECTION);
+        List<SubSection> crossFadeTesterSubSections = new ArrayList<>();
+        crossFadeTesterSubSections.add(new SubSection("DEXCROSSFADEIMAGEVIEW TESTER", SubSection.SUBSECTION_TYPE.CROSS_FADE_TESTER));
+        crossFadeTester.setSubsectionTypeList(crossFadeTesterSubSections);
+        sections.add(crossFadeTester);
     }
 
     public static AppConfiguration get() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,14 +28,14 @@ public class AngledValuesGenerator extends BaseValuesGenerator {
     }
 
     @Override
-    public float getX(int x) {
+    public float getX(float x) {
         float t = super.getX(x);
         float angle = getParameters().getAngle();
         return (float) (t * Math.sin(Math.toRadians(angle)));
     }
 
     @Override
-    public float getY(int y) {
+    public float getY(float y) {
         float t = super.getY(y);
         float angle = getParameters().getAngle();
         return (float) (t * Math.cos(Math.toRadians(angle)));

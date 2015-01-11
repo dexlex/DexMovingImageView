@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package it.dex.movingimageviewlib.generating;
 
 import it.dex.movingimageviewlib.generating.generators.AngledValuesGenerator;
 import it.dex.movingimageviewlib.generating.generators.BaseValuesGenerator;
+import it.dex.movingimageviewlib.generating.generators.RangedValuesGenerator;
+import it.dex.movingimageviewlib.generating.generators.SmoothValuesGenerator;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
@@ -31,6 +33,10 @@ public class ValuesGeneratorChooser {
                 return new BaseValuesGenerator(parameters);
             case ANGLED:
                 return new AngledValuesGenerator(parameters);
+            case RANGED:
+                return new RangedValuesGenerator(parameters);
+            case SMOOTH:
+                return new SmoothValuesGenerator(parameters);
             default:
                 throw new IllegalArgumentException();
         }

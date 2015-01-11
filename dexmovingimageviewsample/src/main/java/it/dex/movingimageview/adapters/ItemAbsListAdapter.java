@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import it.dex.movingimageview.R;
-import it.dex.movingimageview.SubSection;
+import it.dex.movingimageview.data.SubSection;
 
 /**
  * Created by Diego on 07/12/2014.

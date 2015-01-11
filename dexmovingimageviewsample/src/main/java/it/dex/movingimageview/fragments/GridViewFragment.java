@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import it.dex.movingimageview.R;
-import it.dex.movingimageview.SubSection;
 import it.dex.movingimageview.adapters.ItemAbsListAdapter;
+import it.dex.movingimageview.data.SubSection;
 
 public class GridViewFragment extends Fragment {
     private GridView mListView;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,20 +23,29 @@ import android.view.View;
  */
 public abstract class Evaluator {
     private View view;
+    private OnEventOccurred onEventOccurred;
+    private boolean notifyEvent = false;
+    protected int loopCount;
 
     public Evaluator(View view) {
         this.view = view;
     }
 
+    public Evaluator(View view, OnEventOccurred onEventOccurred) {
+        this(view);
+        setOnEventOccurred(onEventOccurred);
+    }
+
     public void start() {
+        setNotifyEvent(true);
         onCreate(view);
     }
 
     protected abstract void onCreate(View view);
 
-    public abstract int evaluateX(View view);
+    public abstract float evaluateX(View view);
 
-    public abstract int evaluateY(View view);
+    public abstract float evaluateY(View view);
 
     public float evaluateZoom(View view, float defaultZoom) {
         return defaultZoom;
@@ -61,6 +70,7 @@ public abstract class Evaluator {
     }
 
     public void stop() {
+        setNotifyEvent(false);
         onDestroy(view);
     }
 
@@ -72,5 +82,30 @@ public abstract class Evaluator {
 
     public void setView(View view) {
         this.view = view;
+    }
+
+    public void restart() {
+        stop();
+        start();
+    }
+
+    public OnEventOccurred getOnEventOccurred() {
+        return onEventOccurred;
+    }
+
+    public void setOnEventOccurred(OnEventOccurred onEventOccurred) {
+        this.onEventOccurred = onEventOccurred;
+    }
+
+    public boolean isNotifyEvent() {
+        return notifyEvent;
+    }
+
+    public void setNotifyEvent(boolean notifyEvent) {
+        this.notifyEvent = notifyEvent;
+    }
+
+    public interface OnEventOccurred {
+        public void onEventOccurred(View view, Evaluator evaluator, int occurrenceCount);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,23 +18,26 @@ package it.dex.movingimageviewlib.evaluating;
 
 import android.view.View;
 
-import it.dex.movingimageviewlib.evaluating.evaluators.AutoEvaluator;
 import it.dex.movingimageviewlib.evaluating.evaluators.GyroscopeEvaluator;
 import it.dex.movingimageviewlib.evaluating.evaluators.ScrollEvaluator;
+import it.dex.movingimageviewlib.evaluating.evaluators.SimpleEvaluator;
+import it.dex.movingimageviewlib.evaluating.evaluators.TimeEvaluator;
 
 /**
  * Created by Diego on 08/12/2014.
  */
 public class EvaluatorChooser {
 
-    public static Evaluator get(EVALUATORS coordinator, View view) throws IllegalArgumentException {
-        switch (coordinator) {
+    public static Evaluator get(EVALUATORS evaluator, View view, Evaluator.OnEventOccurred onEventOccurred) throws IllegalArgumentException {
+        switch (evaluator) {
+            case SIMPLE:
+                return new SimpleEvaluator(view);
             case SCROLL:
-                return new ScrollEvaluator(view);
+                return new ScrollEvaluator(view, onEventOccurred);
             case TIME:
-                return new AutoEvaluator(view);
+                return new TimeEvaluator(view, onEventOccurred);
             case GYROSCOPE:
-                return new GyroscopeEvaluator(view);
+                return new GyroscopeEvaluator(view, onEventOccurred);
             default:
                 throw new IllegalArgumentException();
         }

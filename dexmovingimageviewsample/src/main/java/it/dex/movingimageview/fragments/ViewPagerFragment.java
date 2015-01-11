@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Diego Grancini
+ * Copyright 2014-2015 Diego Grancini
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import it.dex.movingimageview.R;
-import it.dex.movingimageview.Section;
+import it.dex.movingimageview.data.Section;
 
 public class ViewPagerFragment extends Fragment {
     public static final String SECTION_ARG = "orientationArg";
@@ -72,7 +72,7 @@ public class ViewPagerFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (section.getSubsectionTypeList().get(position).getSubsectionType()) {
                 case CROSS_FADE_TESTER:
-                    return null;
+                    return CrossFadeTesterFragment.newInstance();
                 case CROSS_FADE_VIEW:
                     return CrossFadeFragment.newInstance();
                 case GRID_VIEW:
@@ -91,6 +91,8 @@ public class ViewPagerFragment extends Fragment {
                     return RecyclerViewFragment.newInstance(RecyclerViewFragment.TYPE.UIL);
                 case SCROLL_VIEW:
                     return ScrollViewFragment.newInstance();
+                case MOVING_TESTER:
+                    return MovingTesterFragment.newInstance();
             }
             return null;
         }
