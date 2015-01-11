@@ -1,6 +1,6 @@
 # ![Logo](https://github.com/dexlex/DexMovingImageView/raw//master/ic_launcher.png) Dex Moving ImageView
 
-DMIV aims to provide a flexible and customizable instrument for automated image moving on display. It provides scroll or time based moving. But you can create your own evaluator.
+DMIV aims to provide a flexible and customizable instrument for automated images moving on display. It provides scroll or time based moving. But you can create your own evaluator.
 
 ![Screenshot](https://github.com/dexlex/DexMovingImageView/raw/master/dmiv_screenshot.gif)
 
@@ -35,12 +35,13 @@ DMIV aims to provide a flexible and customizable instrument for automated image 
 ## Donation
 You can support the project by donating what you want using PayPal
 
+<div class="clients">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="JBJ7MKZ3U5KBY">
 <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-</form>
+</form></div>
 
 
 ## License
