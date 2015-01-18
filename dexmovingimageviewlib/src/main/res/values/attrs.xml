@@ -40,8 +40,6 @@
         <attr name="generator" format="enum|string">
             <enum name="base" value="0" />
             <enum name="angled" value="1" />
-            <enum name="ranged" value="2" />
-            <enum name="smooth" value="3" />
         </attr>
         <attr name="evaluator" format="enum|string">
             <enum name="simple" value="0" />

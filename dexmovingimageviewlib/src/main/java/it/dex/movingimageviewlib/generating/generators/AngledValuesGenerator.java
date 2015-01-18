@@ -16,12 +16,13 @@
 
 package it.dex.movingimageviewlib.generating.generators;
 
+import it.dex.movingimageviewlib.generating.ValuesGenerator;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
  * DexMoveImageView created by Diego on 13/12/2014.
  */
-public class AngledValuesGenerator extends BaseValuesGenerator {
+public class AngledValuesGenerator extends ValuesGenerator {
 
     public AngledValuesGenerator(Parameters parameters) {
         super(parameters);
@@ -29,15 +30,23 @@ public class AngledValuesGenerator extends BaseValuesGenerator {
 
     @Override
     public float getX(float x) {
-        float t = super.getX(x);
         float angle = getParameters().getAngle();
-        return (float) (t * Math.sin(Math.toRadians(angle)));
+        float width = getParameters().getWidth();
+        float deviceWidth = getParameters().getDeviceWidth();
+        float zoom = getParameters().getZoom();
+        float range = (deviceWidth - width / 2) * (zoom - 1) / zoom;
+        float t = (float) (range * Math.sin(Math.toRadians(x)));
+        return (float) (t * Math.cos(Math.toRadians(angle)));
     }
 
     @Override
     public float getY(float y) {
-        float t = super.getY(y);
         float angle = getParameters().getAngle();
-        return (float) (t * Math.cos(Math.toRadians(angle)));
+        float height = getParameters().getHeight();
+        float deviceHeight = getParameters().getDeviceHeight();
+        float zoom = getParameters().getZoom();
+        float range = (deviceHeight - height / 2) * (zoom - 1) / zoom;
+        float t = (float) (range * Math.sin(Math.toRadians(y)));
+        return (float) (t * Math.sin(Math.toRadians(angle)));
     }
 }

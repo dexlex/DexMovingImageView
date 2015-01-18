@@ -80,8 +80,6 @@
     <string-array name="generators">
         <item>Base</item>
         <item>Angled</item>
-        <item>Ranged</item>
-        <item>Smooth</item>
     </string-array>
 
 </resources>

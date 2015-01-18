@@ -20,7 +20,7 @@ package it.dex.movingimageviewlib.generating;
  * Created by Diego on 08/12/2014.
  */
 public enum VALUESGENERATORS {
-    BASE(0), ANGLED(1), RANGED(2), SMOOTH(3);
+    BASE(0), ANGLED(1);
 
     private int type;
 
@@ -34,10 +34,6 @@ public enum VALUESGENERATORS {
                 return BASE;
             case 1:
                 return ANGLED;
-            case 2:
-                return RANGED;
-            case 3:
-                return SMOOTH;
             default:
                 throw new IllegalArgumentException();
         }

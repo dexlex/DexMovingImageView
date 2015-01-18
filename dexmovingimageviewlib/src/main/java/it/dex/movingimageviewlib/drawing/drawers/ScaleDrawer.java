@@ -25,11 +25,14 @@ import it.dex.movingimageviewlib.parameters.Parameters;
  * DexMoveImageView created by Diego on 05/01/2015.
  */
 public class ScaleDrawer implements Drawer {
+
     @Override
     public void onDraw(Canvas canvas, Parameters parameters) {
         float zoom = parameters.getZoom();
         int width = parameters.getWidth();
         int height = parameters.getHeight();
-        canvas.scale(zoom, zoom, width / 2, height / 2);
+        int pivotX = width / 2;
+        int pivotY = height / 2;
+        canvas.scale(zoom, zoom, pivotX, pivotY);
     }
 }

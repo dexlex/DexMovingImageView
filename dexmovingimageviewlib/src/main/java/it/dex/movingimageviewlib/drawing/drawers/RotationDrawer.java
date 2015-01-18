@@ -31,6 +31,10 @@ public class RotationDrawer implements Drawer {
         int width = parameters.getWidth();
         int height = parameters.getHeight();
         float angle = parameters.getAngle();
-        canvas.rotate(angle, width / 2, height / 2);
+        float x = parameters.getX();
+        float y = parameters.getY();
+        int pivotX = width / 2;
+        int pivotY = height / 2;
+        canvas.rotate(angle, pivotX + x, pivotY + y);
     }
 }

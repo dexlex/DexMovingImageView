@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import java.util.HashMap;
@@ -155,7 +154,7 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
             parameters.setX(getValuesGenerator().getX(getEvaluator().evaluateX(this)));
             parameters.setY(getValuesGenerator().getY(getEvaluator().evaluateY(this)));
             parameters.setZoom(getValuesGenerator().getZoom(getEvaluator().evaluateZoom(this, getParameters().getZoom()), getParameters().getZoom()));
-            parameters.setAngle(getValuesGenerator().getAngle(getEvaluator().evaluateAngle(this, getParameters().getAngle()), getParameters().getZoom()));
+            parameters.setAngle(getValuesGenerator().getAngle(getEvaluator().evaluateAngle(this, getParameters().getAngle()), getParameters().getAngle()));
         }
         super.invalidate();
     }
@@ -223,7 +222,6 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
 
     public void addDrawer(String drawerName, Drawer drawer) {
         drawers.put(drawerName, drawer);
-        Log.d("DRAWERS", drawers.toString());
     }
 
     public boolean isDrawerAdded(DRAWERS drawerType) {
@@ -233,7 +231,6 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
 
     public void removeDrawer(String drawerName) {
         drawers.remove(drawerName);
-        Log.d("DRAWERS", drawers.toString());
     }
 
     public void setOnValueChanged(OnValueChanged onValueChanged) {
@@ -281,9 +278,10 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
     }
 
     public void setSpeed(float speed) {
-        getParameters().setSpeed(speed);
-        if (getEvaluator() instanceof TimeEvaluator)
-            getEvaluator().restart();
+        if (getEvaluator() instanceof TimeEvaluator) {
+            TimeEvaluator timeEvaluator = (TimeEvaluator) getEvaluator();
+            timeEvaluator.setSpeed(speed);
+        }
     }
 
     public float getMinZoom() {

@@ -149,12 +149,6 @@ public class MovingTesterFragment extends Fragment implements CompoundButton.OnC
             case "Angled":
                 generatorValue = VALUESGENERATORS.ANGLED;
                 break;
-            case "Ranged":
-                generatorValue = VALUESGENERATORS.RANGED;
-                break;
-            case "Smooth":
-                generatorValue = VALUESGENERATORS.SMOOTH;
-                break;
         }
         if (evaluatorValue != null) {
             dexMovingImageView.setEvaluatorType(evaluatorValue);
@@ -207,6 +201,8 @@ public class MovingTesterFragment extends Fragment implements CompoundButton.OnC
             case R.id.speed_seek_bar:
                 if (progress != 0)
                     dexMovingImageView.setSpeed(progress);
+                else
+                    dexMovingImageView.setSpeed(1);
                 break;
         }
     }

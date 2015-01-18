@@ -4,17 +4,17 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 
 ![Screenshot](https://github.com/dexlex/DexMovingImageView/raw/master/dmiv_screenshot.gif)
 
-## Features
+# Features
  * Google Calendar ImageView
  * Google NewsStand Moving ImageView
  * Structured system to create your own objects or use the ones provided
  * Flexible way to create your own effect
  * Android 1.5+ support
 
-## Downloads
+# Downloads
 [![Demo app](https://github.com/dexlex/DexMovingImageView/blob/master/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.movingimageview)
 
-##References
+#References
 * [Quick setup](https://github.com/dexlex/DexMovingImageView/wiki/Quinck-Setup)
 * [Provided Resources](https://github.com/dexlex/DexMovingImageView/wiki/Provided-Resources)
 * [Evaluators](https://github.com/dexlex/DexMovingImageView/wiki/Evaluators)
@@ -23,10 +23,10 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 * [FAQ](https://github.com/dexlex/DexMovingImageView/wiki/FAQ)
 * [ChangeLog](https://github.com/dexlex/DexMovingImageView/wiki/ChangeLog)
 
-## Usage
+# Usage
 
-###Simple
-####DexCrossFadeImageView
+##Simple
+###DexCrossFadeImageView
 ```xml
 <it.dex.movingimageviewlib.DexCrossFadeImageView
         android:id="@+id/image"
@@ -45,14 +45,31 @@ DexCrossFadeImageView dexCrossFadeImageView = (DexCrossFadeImageView) view.findV
 dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
 ```
 
-####DexMovigImageView
+###DexMovigImageView
 
-###Advanced
-####Evaluators
-####Values Generators
-####Drawers
+```xml
+<it.dex.movingimageviewlib.DexMovingImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/material"
+        dex:evaluator="simple"
+        dex:images_array="@array/images"
+        dex:generator="base"
+        dex:angle="130"
+        dex:loop="true"
+        dex:zoom="1.65"
+        dex:drawer="scale|translate"
+        dex:still_image_duration_millis="3000"
+        dex:transition_duration_millis="1000" />
+```
 
-## Donation
+##Advanced
+###Evaluators
+###Values Generators
+###Drawers
+
+# Donation
 You can support the project by donating what you want using PayPal
 
 <div class="clients">
@@ -64,7 +81,7 @@ You can support the project by donating what you want using PayPal
 </form></div>
 
 
-## License
+# License
 
     Copyright 2014-2015 Diego Grancini
 

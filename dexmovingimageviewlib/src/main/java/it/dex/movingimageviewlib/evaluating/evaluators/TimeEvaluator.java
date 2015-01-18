@@ -29,7 +29,6 @@ import it.dex.movingimageviewlib.parameters.Parameters;
  */
 public class TimeEvaluator extends Evaluator implements Runnable {
     protected int evaluatedValue;
-
     private float speed = 30;
     private float minZoom = 1.5f;
     private float maxZoom = 1.7f;
@@ -63,12 +62,12 @@ public class TimeEvaluator extends Evaluator implements Runnable {
 
     @Override
     public float evaluateX(View view) {
-        return view.getWidth() * evaluatedValue / Parameters.MAX_ANGLE;
+        return evaluatedValue;
     }
 
     @Override
     public float evaluateY(View view) {
-        return view.getHeight() * evaluatedValue / Parameters.MAX_ANGLE;
+        return evaluatedValue;
     }
 
     @Override

@@ -33,7 +33,8 @@ public class BaseValuesGenerator extends ValuesGenerator {
         float width = getParameters().getWidth();
         float deviceWidth = getParameters().getDeviceWidth();
         float zoom = getParameters().getZoom();
-        float delta = (deviceWidth - width) / 2 - x;
+        float newX = width * x / Parameters.MAX_ANGLE;
+        float delta = (deviceWidth - width) / 2 - newX;
         float t = delta * (width / (deviceWidth + width));
         return t * (zoom - 1) / zoom;
     }
@@ -43,7 +44,8 @@ public class BaseValuesGenerator extends ValuesGenerator {
         float height = getParameters().getHeight();
         float deviceHeight = getParameters().getDeviceHeight();
         float zoom = getParameters().getZoom();
-        float delta = (deviceHeight - height) / 2 - y;
+        float newY = height * y / Parameters.MAX_ANGLE;
+        float delta = (deviceHeight - height) / 2 - newY;
         float t = delta * (height / (deviceHeight + height));
         return t * (zoom - 1) / zoom;
     }

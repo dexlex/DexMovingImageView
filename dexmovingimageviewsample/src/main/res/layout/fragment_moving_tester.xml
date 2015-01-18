@@ -26,16 +26,15 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/material"
+        android:src="@drawable/google"
         dex:evaluator="simple"
-        dex:images_array="@array/images"
         dex:generator="base"
         dex:angle="130"
         dex:loop="true"
         dex:zoom="1.65"
         dex:drawer="scale|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:still_image_duration_millis="6000"
+        dex:transition_duration_millis="2000" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/values_card_view"
@@ -394,13 +393,13 @@
                             android:id="@+id/speed_seek_bar"
                             android:layout_width="match_parent"
                             android:layout_weight="1"
-                            android:max="100"
+                            android:max="200"
                             android:layout_height="wrap_content" />
 
                         <TextView
                             android:textColor="@color/secondary"
                             android:padding="5dp"
-                            android:text="100"
+                            android:text="200"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
