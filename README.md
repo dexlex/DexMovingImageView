@@ -1,8 +1,8 @@
-# ![Logo](https://github.com/dexlex/DexMovingImageView/raw//master/ic_launcher.png) Dex Moving ImageView
+# ![Logo](/assets/images/dmiv.png) Dex Moving ImageView
 
 DMIV aims to provide a flexible and customizable instrument for automated images moving on display. It provides scroll or time based moving. But you can create your own evaluator.
 
-![Screenshot](https://github.com/dexlex/DexMovingImageView/raw/master/dmiv_screenshot.gif)
+![Screenshot](/assets/images/dmiv_screenshot.gif)
 
 # Features
  * Google Calendar ImageView
@@ -12,7 +12,7 @@ DMIV aims to provide a flexible and customizable instrument for automated images
  * Android 1.5+ support
 
 # Downloads
-[![Demo app](https://github.com/dexlex/DexMovingImageView/blob/master/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.movingimageview)
+[![Demo app](assets/images/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.movingimageview)
 
 #References
 * [Quick setup](https://github.com/dexlex/DexMovingImageView/wiki/Quinck-Setup)
@@ -69,16 +69,23 @@ dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
 ###Values Generators
 ###Drawers
 
-# Donation
-You can support the project by donating what you want using PayPal
+Credits
+-------
 
-<div class="clients">
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="JBJ7MKZ3U5KBY">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-</form></div>
+Author: Diego Grancini (dexlex84@gmail.com)
+
+<a href="https://plus.google.com/u/0/+DiegoGrancini/posts">
+  <img alt="Follow me on Google+"
+       src="/assets/images/google.png" />
+</a>
+<a href="https://twitter.com/DiegoGrancini">
+  <img alt="Follow me on Twitter"
+       src="/assets/images/twitter.png" />
+</a>
+<a href="http://it.linkedin.com/in/diegograncini">
+  <img alt="Follow me on LinkedIn"
+       src="/assets/images/linkedin.png" />
+</a>
 
 
 # License
