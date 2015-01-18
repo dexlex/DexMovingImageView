@@ -41,7 +41,11 @@ import it.dex.movingimageview.data.AppConfiguration;
 import it.dex.movingimageview.data.Section;
 import it.dex.movingimageview.utils.DividerItemDecoration;
 
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment implements View.OnClickListener {
+    public static final int GOOGLE_PLUS = 0;
+    public static final int TWITTER = 1;
+    public static final int LINKED_IN = 2;
+    public static final int GITHUB = 3;
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
     private NavigationDrawerCallbacks mCallbacks;
@@ -70,8 +74,9 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mDrawerListView = (RecyclerView) inflater.inflate(
+        View view = inflater.inflate(
                 R.layout.fragment_navigation_drawer, container, false);
+        mDrawerListView = (RecyclerView) view.findViewById(R.id.list);
         navigationDrawerAdapter = new NavigationDrawerAdapter(AppConfiguration.get().getSections());
         navigationDrawerAdapter.setOnItemClickListener(new NavigationDrawerAdapter.OnItemClickListener() {
             @Override
@@ -82,7 +87,11 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerListView.setAdapter(navigationDrawerAdapter);
         mDrawerListView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         mDrawerListView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
-        return mDrawerListView;
+        view.findViewById(R.id.google_plus).setOnClickListener(this);
+        view.findViewById(R.id.twitter).setOnClickListener(this);
+        view.findViewById(R.id.linkedin).setOnClickListener(this);
+        view.findViewById(R.id.github).setOnClickListener(this);
+        return view;
     }
 
     public boolean isDrawerOpen() {
@@ -203,7 +212,29 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerLayout.closeDrawer(mFragmentContainerView);
     }
 
+    @Override
+    public void onClick(View v) {
+        int selectedSocial = 0;
+        switch (v.getId()) {
+            case R.id.google_plus:
+                selectedSocial = GOOGLE_PLUS;
+                break;
+            case R.id.twitter:
+                selectedSocial = TWITTER;
+                break;
+            case R.id.linkedin:
+                selectedSocial = LINKED_IN;
+                break;
+            case R.id.github:
+                selectedSocial = GITHUB;
+                break;
+        }
+        mCallbacks.onSocialIconSelected(selectedSocial);
+    }
+
     public static interface NavigationDrawerCallbacks {
         void onNavigationDrawerItemSelected(Section section);
+
+        void onSocialIconSelected(int selectedSocial);
     }
 }

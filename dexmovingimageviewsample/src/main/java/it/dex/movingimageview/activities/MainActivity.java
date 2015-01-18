@@ -18,6 +18,7 @@ package it.dex.movingimageview.activities;
 
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -27,6 +28,7 @@ import android.support.v7.widget.ShareActionProvider;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 
 import it.dex.movingimageview.R;
 import it.dex.movingimageview.data.Section;
@@ -54,7 +56,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     private void addSystemBarMargin(View view) {
         DrawerLayout.LayoutParams lp = (DrawerLayout.LayoutParams) view.getLayoutParams();
-        lp.setMargins(0, lp.topMargin + getStatusBarHeight() + getActionBarHeight(), 0, 0);
+        lp.setMargins(lp.leftMargin, lp.topMargin + getStatusBarHeight() + getActionBarHeight(), lp.rightMargin, lp.bottomMargin + getNavigationBarHeight());
         view.setLayoutParams(lp);
     }
 
@@ -62,6 +64,16 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         int result = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    public int getNavigationBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
+        boolean hasMenuKey = ViewConfiguration.get(this).hasPermanentMenuKey();
+        if (resourceId > 0 && !hasMenuKey) {
             result = getResources().getDimensionPixelSize(resourceId);
         }
         return result;
@@ -94,6 +106,28 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     public void onNavigationDrawerItemSelected(Section section) {
         Fragment fragment = ViewPagerFragment.newInstance(section);
         getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commit();
+    }
+
+    @Override
+    public void onSocialIconSelected(int selectedSocial) {
+        int urlRes = 0;
+        switch (selectedSocial) {
+            case NavigationDrawerFragment.GOOGLE_PLUS:
+                urlRes = R.string.google_plus;
+                break;
+            case NavigationDrawerFragment.TWITTER:
+                urlRes = R.string.twitter;
+                break;
+            case NavigationDrawerFragment.LINKED_IN:
+                urlRes = R.string.linked_in;
+                break;
+            case NavigationDrawerFragment.GITHUB:
+                urlRes = R.string.github;
+                break;
+        }
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(getResources().getString(urlRes)));
+        startActivity(intent);
     }
 
     @Override

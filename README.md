@@ -83,8 +83,12 @@ Author: Diego Grancini (dexlex84@gmail.com)
        src="/assets/images/twitter.png" />
 </a>
 <a href="http://it.linkedin.com/in/diegograncini">
-  <img alt="Follow me on LinkedIn"
-       src="/assets/images/linkedin.png" />
+      <img alt="Follow me on LinkedIn"
+           src="/assets/images/linkedin.png" />
+</a>
+<a href="https://github.com/dexlex/DexMovingImageView">
+     <img alt="Follow me on GitHub"
+           src="/assets/images/github.png" />
 </a>
 
 

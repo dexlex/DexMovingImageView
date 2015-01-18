@@ -14,9 +14,49 @@
   ~ limitations under the License.
   -->
 
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list"
+<LinearLayout
     android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:background="@color/primary_dark"
-    android:scrollbars="vertical" />
+    android:orientation="vertical"
+    android:background="@color/primary_dark">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/google_plus"
+            android:layout_width="wrap_content"
+            android:src="@drawable/google_plus"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="wrap_content"
+            android:src="@drawable/twitter"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/linkedin"
+            android:layout_width="wrap_content"
+            android:src="@drawable/linkedin"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/github"
+            android:layout_width="wrap_content"
+            android:src="@drawable/github"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

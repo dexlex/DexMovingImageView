@@ -82,4 +82,9 @@
         <item>Angled</item>
     </string-array>
 
+    <string name="google_plus">https://plus.google.com/u/0/+DiegoGrancini/posts</string>
+    <string name="twitter">https://twitter.com/DiegoGrancini</string>
+    <string name="linked_in">http://it.linkedin.com/in/diegograncini</string>
+    <string name="github">https://github.com/dexlex/DexMovingImageView</string>
+
 </resources>
