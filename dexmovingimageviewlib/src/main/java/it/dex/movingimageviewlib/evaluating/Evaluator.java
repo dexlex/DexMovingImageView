@@ -25,7 +25,7 @@ public abstract class Evaluator {
     private View view;
     private OnEventOccurred onEventOccurred;
     private boolean notifyEvent = false;
-    protected int loopCount;
+    protected int startLoopCount, middleLoopCount, endLoopCount, firstQuarterLoopCount, secondQuarterLoopCount;
 
     public Evaluator(View view) {
         this.view = view;
@@ -106,6 +106,10 @@ public abstract class Evaluator {
     }
 
     public interface OnEventOccurred {
-        public void onEventOccurred(View view, Evaluator evaluator, int occurrenceCount);
+        public void onEventOccurred(View view, Evaluator evaluator, EVENT_STATUS eventStatus, int occurrenceCount);
+    }
+
+    public enum EVENT_STATUS {
+        START, FIRST_QUARTER, MIDDLE, SECOND_QUARTER, END
     }
 }

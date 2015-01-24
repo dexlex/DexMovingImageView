@@ -32,6 +32,8 @@
         dex:angle="130"
         dex:loop="true"
         dex:zoom="1.65"
+        dex:minZoom="1.0"
+        dex:maxZoom="3.0"
         dex:drawer="scale|translate"
         dex:still_image_duration_millis="6000"
         dex:transition_duration_millis="2000" />

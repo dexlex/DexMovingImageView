@@ -24,8 +24,8 @@ public class Parameters {
     public static final float MIN_ZOOM = 0.0f;
     public static final float MAX_ANGLE = 360f;
     public static final float MIN_ANGLE = 0f;
-    public static final float MAX_SPEED = 100f;
-    public static final float MIN_SPEED = 10f;
+    public static final float MAX_FREQUENCY = 100f;
+    public static final float MIN_FREQUENCY = 10f;
 
     private int deviceWidth;
     private int deviceHeight;
@@ -40,9 +40,9 @@ public class Parameters {
     private float minAngle = MIN_ANGLE;
     private float maxAngle = MAX_ANGLE;
 
-    private float speed = 30;
-    private float minSpeed = MIN_SPEED;
-    private float maxSpeed = MAX_SPEED;
+    private float frequency = 30;
+    private float minFrequency = MIN_FREQUENCY;
+    private float maxFrequency = MAX_FREQUENCY;
 
     private float x;
     private float y;
@@ -113,13 +113,13 @@ public class Parameters {
         this.deviceHeight = deviceHeight;
     }
 
-    public float getSpeed() {
-        return speed;
+    public float getFrequency() {
+        return frequency;
     }
 
-    public void setSpeed(float speed) {
-        if (speed >= getMinSpeed() && speed <= getMaxSpeed())
-            this.speed = speed;
+    public void setFrequency(float frequency) {
+        if (frequency >= getMinFrequency() && frequency <= getMaxFrequency())
+            this.frequency = frequency;
     }
 
     public float getMinZoom() {
@@ -166,25 +166,25 @@ public class Parameters {
             throw new IllegalArgumentException("MaxAngle value must be <= " + MAX_ANGLE + " and >= " + MIN_ANGLE + ". " + maxAngle + " is not correct.");
     }
 
-    public float getMinSpeed() {
-        return minSpeed;
+    public float getMinFrequency() {
+        return minFrequency;
     }
 
-    public void setMinSpeed(float minSpeed) {
-        if (minSpeed <= MAX_SPEED && minSpeed >= MIN_SPEED)
-            this.minSpeed = minSpeed;
+    public void setMinFrequency(float minFrequency) {
+        if (minFrequency <= MAX_FREQUENCY && minFrequency >= MIN_FREQUENCY)
+            this.minFrequency = minFrequency;
         else
-            throw new IllegalArgumentException("MinSpeed value must be <= " + MAX_SPEED + " and >= " + MIN_SPEED + ". " + minSpeed + " is not correct.");
+            throw new IllegalArgumentException("MinFrequency value must be <= " + MAX_FREQUENCY + " and >= " + MIN_FREQUENCY + ". " + minFrequency + " is not correct.");
     }
 
-    public float getMaxSpeed() {
-        return maxSpeed;
+    public float getMaxFrequency() {
+        return maxFrequency;
     }
 
-    public void setMaxSpeed(float maxSpeed) {
-        if (maxSpeed <= MAX_SPEED && maxSpeed >= MIN_SPEED)
-            this.maxSpeed = maxSpeed;
+    public void setMaxFrequency(float maxFrequency) {
+        if (maxFrequency <= MAX_FREQUENCY && maxFrequency >= MIN_FREQUENCY)
+            this.maxFrequency = maxFrequency;
         else
-            throw new IllegalArgumentException("MaxSpeed value must be <= " + MAX_SPEED + " and >= " + MIN_SPEED + ". " + maxSpeed + " is not correct.");
+            throw new IllegalArgumentException("MaxFrequency value must be <= " + MAX_FREQUENCY + " and >= " + MIN_FREQUENCY + ". " + maxFrequency + " is not correct.");
     }
 }

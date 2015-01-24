@@ -80,6 +80,7 @@
     <string-array name="generators">
         <item>Base</item>
         <item>Angled</item>
+        <item>Zoomed</item>
     </string-array>
 
     <string name="google_plus">https://plus.google.com/u/0/+DiegoGrancini/posts</string>

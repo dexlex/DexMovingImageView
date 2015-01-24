@@ -73,8 +73,8 @@ public class GyroscopeEvaluator extends Evaluator implements SensorEventListener
     @Override
     public void onSensorChanged(SensorEvent event) {
         float[] values = event.values;
-        float x = values[0];
-        float y = values[1];
+        float x = values[1];
+        float y = values[0];
         float z = values[2];
 
         float angularVelocity = z * 0.96f;
@@ -99,9 +99,8 @@ public class GyroscopeEvaluator extends Evaluator implements SensorEventListener
 
         this.z += angularVelocity * timeDiff;
         if (this.x == 0 && this.y == 0 && this.z == 0) {
-            loopCount++;
             if (getOnEventOccurred() != null && isNotifyEvent())
-                getOnEventOccurred().onEventOccurred(getView(), this, loopCount);
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.MIDDLE, ++middleLoopCount);
         }
         getView().invalidate();
     }

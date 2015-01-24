@@ -93,10 +93,10 @@ public class MovingTesterFragment extends Fragment implements CompoundButton.OnC
         translate.setChecked(dexMovingImageView.isDrawerAdded(DRAWERS.TRANSLATE));
         zoomSeekBar.setProgress((int) (dexMovingImageView.getZoom() * 100));
         angleSeekBar.setProgress((int) (dexMovingImageView.getAngle() * 100 / angleSeekBar.getMax()));
-        if (dexMovingImageView.getSpeed() == 0)
+        if (dexMovingImageView.getFrequency() == 0)
             speedSeekBar.setProgress(0);
         else
-            speedSeekBar.setProgress((int) (1 / dexMovingImageView.getSpeed()));
+            speedSeekBar.setProgress((int) (1 / dexMovingImageView.getFrequency()));
         dexMovingImageView.setOnValueChanged(this);
         dexMovingImageView.setOnEventOccurred(this);
     }
@@ -218,7 +218,11 @@ public class MovingTesterFragment extends Fragment implements CompoundButton.OnC
     }
 
     @Override
-    public void onEventOccurred(View view, Evaluator evaluator, int occurrenceCount) {
-        eventOccurrences.setText(occurrenceCount + "");
+    public void onEventOccurred(View view, Evaluator evaluator, Evaluator.EVENT_STATUS eventStatus, int occurrenceCount) {
+        switch (eventStatus) {
+            case END:
+                eventOccurrences.setText(occurrenceCount + "");
+                break;
+        }
     }
 }

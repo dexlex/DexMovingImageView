@@ -18,6 +18,7 @@ package it.dex.movingimageviewlib.generating;
 
 import it.dex.movingimageviewlib.generating.generators.AngledValuesGenerator;
 import it.dex.movingimageviewlib.generating.generators.BaseValuesGenerator;
+import it.dex.movingimageviewlib.generating.generators.ZoomedAngledValuesGenerator;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
@@ -31,6 +32,8 @@ public class ValuesGeneratorChooser {
                 return new BaseValuesGenerator(parameters);
             case ANGLED:
                 return new AngledValuesGenerator(parameters);
+            case ZOOMED:
+                return new ZoomedAngledValuesGenerator(parameters);
             default:
                 throw new IllegalArgumentException();
         }

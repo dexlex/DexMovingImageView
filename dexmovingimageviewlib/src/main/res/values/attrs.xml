@@ -40,6 +40,7 @@
         <attr name="generator" format="enum|string">
             <enum name="base" value="0" />
             <enum name="angled" value="1" />
+            <enum name="zoomed" value="2" />
         </attr>
         <attr name="evaluator" format="enum|string">
             <enum name="simple" value="0" />
@@ -47,6 +48,7 @@
             <enum name="timeBased" value="2" />
             <enum name="gyroscopeBased" value="3" />
         </attr>
+
         <attr name="zoom" format="reference|float" />
         <attr name="minZoom" format="reference|float" />
         <attr name="maxZoom" format="reference|float" />
@@ -54,7 +56,5 @@
         <attr name="minAngle" format="reference|float" />
         <attr name="maxAngle" format="reference|float" />
         <attr name="speed" format="reference|float" />
-        <attr name="minSpeed" format="reference|float" />
-        <attr name="maxSpeed" format="reference|float" />
     </declare-styleable>
 </resources>

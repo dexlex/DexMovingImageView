@@ -28,10 +28,9 @@ import it.dex.movingimageviewlib.parameters.Parameters;
  * DexMoveImageView created by Diego on 13/12/2014.
  */
 public class TimeEvaluator extends Evaluator implements Runnable {
-    protected int evaluatedValue;
-    private float speed = 30;
-    private float minZoom = 1.5f;
-    private float maxZoom = 1.7f;
+    protected float evaluatedValue;
+    private float frequency = 30;
+    private final float step = 0.1f;
 
     private Timer timer;
 
@@ -45,18 +44,20 @@ public class TimeEvaluator extends Evaluator implements Runnable {
 
     @Override
     public void onCreate(final View view) {
-        startTimer(speed);
+        startTimer(frequency);
     }
 
-    private void startTimer(float speed) {
-        if (getSpeed() != 0) {
+    private void startTimer(float frequency) {
+        if (getFrequency() != 0) {
+            stop();
+            setNotifyEvent(true);
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
                 public void run() {
                     getView().post(TimeEvaluator.this);
                 }
-            }, 0, (long) (getSpeed()));
+            }, 0, (long) (frequency));
         }
     }
 
@@ -91,37 +92,32 @@ public class TimeEvaluator extends Evaluator implements Runnable {
 
     @Override
     public void run() {
-        if (++evaluatedValue == Parameters.MAX_ANGLE) {
-            loopCount++;
-            if (getOnEventOccurred() != null && isNotifyEvent())
-                getOnEventOccurred().onEventOccurred(getView(), this, loopCount);
+        evaluatedValue = evaluatedValue + step;
+        if (getOnEventOccurred() != null && isNotifyEvent()) {
+            if (evaluatedValue >= Parameters.MAX_ANGLE - step) {
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.END, ++endLoopCount);
+            } else if (evaluatedValue <= Parameters.MIN_ANGLE + step) {
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.START, ++startLoopCount);
+            } else if (evaluatedValue + (step / 2) >= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) / 2 && evaluatedValue - (step / 2) <= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) / 2) {
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.MIDDLE, ++middleLoopCount);
+            } else if (evaluatedValue + (step / 2) >= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) / 4 && evaluatedValue - (step / 2) <= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) / 4) {
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.FIRST_QUARTER, ++firstQuarterLoopCount);
+            } else if (evaluatedValue + (step / 2) >= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) * 3 / 4 && evaluatedValue - (step / 2) <= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) * 3 / 4) {
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.SECOND_QUARTER, ++secondQuarterLoopCount);
+            }
+        }
+        if (evaluatedValue >= Parameters.MAX_ANGLE - step) {
             evaluatedValue = (int) Parameters.MIN_ANGLE;
         }
         getView().invalidate();
     }
 
-    public float getSpeed() {
-        return speed;
+    public float getFrequency() {
+        return frequency;
     }
 
-    public void setSpeed(float speed) {
-        this.speed = speed;
+    public void setFrequency(float frequency) {
+        this.frequency = frequency;
         restart();
-    }
-
-    public float getMinZoom() {
-        return minZoom;
-    }
-
-    public void setMinZoom(float minZoom) {
-        this.minZoom = minZoom;
-    }
-
-    public float getMaxZoom() {
-        return maxZoom;
-    }
-
-    public void setMaxZoom(float maxZoom) {
-        this.maxZoom = maxZoom;
     }
 }

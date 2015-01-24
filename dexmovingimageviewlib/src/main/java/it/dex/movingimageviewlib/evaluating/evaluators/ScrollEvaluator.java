@@ -60,9 +60,8 @@ public class ScrollEvaluator extends Evaluator implements ViewTreeObserver.OnScr
         getView().getLocationInWindow(viewLocation);
         if (viewLocation[0] + getView().getWidth() / 2 == getView().getContext().getResources().getDisplayMetrics().widthPixels / 2 &&
                 viewLocation[1] + getView().getHeight() / 2 == getView().getContext().getResources().getDisplayMetrics().heightPixels / 2) {
-            loopCount++;
             if (getOnEventOccurred() != null && isNotifyEvent())
-                getOnEventOccurred().onEventOccurred(getView(), this, loopCount);
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.MIDDLE, ++middleLoopCount);
         }
         getView().invalidate();
     }

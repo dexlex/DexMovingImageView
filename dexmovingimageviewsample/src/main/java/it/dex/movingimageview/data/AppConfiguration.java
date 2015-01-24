@@ -52,6 +52,12 @@ public class AppConfiguration {
         movingRemoteScrollers.setSubsectionTypeList(movingRemoteScrollersSubSections);
         sections.add(movingRemoteScrollers);
 
+        Section newsStandScrollers = new Section("NewsStand", Section.SECTION_TYPE.SUBSECTION);
+        List<SubSection> newsStandSubSections = new ArrayList<>();
+        newsStandSubSections.add(new SubSection("NEWSSTAND", SubSection.SUBSECTION_TYPE.NEWS_STAND));
+        newsStandScrollers.setSubsectionTypeList(newsStandSubSections);
+        sections.add(newsStandScrollers);
+
         Section movingTester = new Section("DexMovingImageView Tester", Section.SECTION_TYPE.SUBSECTION);
         List<SubSection> movingTesterSubSections = new ArrayList<>();
         movingTesterSubSections.add(new SubSection("DEXMOVINGIMAGEVIEW TESTER", SubSection.SUBSECTION_TYPE.MOVING_TESTER));

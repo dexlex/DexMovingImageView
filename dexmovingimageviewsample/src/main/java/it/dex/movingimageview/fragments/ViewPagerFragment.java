@@ -93,6 +93,8 @@ public class ViewPagerFragment extends Fragment {
                     return ScrollViewFragment.newInstance();
                 case MOVING_TESTER:
                     return MovingTesterFragment.newInstance();
+                case NEWS_STAND:
+                    return NewsStandFragment.newInstance();
             }
             return null;
         }

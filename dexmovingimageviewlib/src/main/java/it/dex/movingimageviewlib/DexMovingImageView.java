@@ -44,7 +44,7 @@ import it.dex.movingimageviewlib.parameters.Parameters;
  */
 public class DexMovingImageView extends DexCrossFadeImageView implements Evaluator.OnEventOccurred {
     private Parameters parameters = new Parameters();
-    private Map<String, Drawer> drawers = new HashMap<String, Drawer>();
+    private Map<String, Drawer> drawers = new HashMap<>();
     private ValuesGenerator valuesGenerator;
     private Evaluator evaluator;
     private OnValueChanged onValueChanged;
@@ -89,11 +89,7 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
                 } else if (attr == R.styleable.DexMovingImageView_maxAngle) {
                     setMaxAngle(a.getFloat(attr, getMaxAngle()));
                 } else if (attr == R.styleable.DexMovingImageView_speed) {
-                    setSpeed(a.getFloat(attr, getSpeed()));
-                } else if (attr == R.styleable.DexMovingImageView_minSpeed) {
-                    setMinSpeed(a.getFloat(attr, getMinSpeed()));
-                } else if (attr == R.styleable.DexMovingImageView_maxSpeed) {
-                    setMaxSpeed(a.getFloat(attr, getMaxSpeed()));
+                    setFrequency(1 / a.getFloat(attr, getFrequency()) * 1000);
                 } else if (attr == R.styleable.DexMovingImageView_drawer) {
                     if ((a.getInt(attr, 1) & 0) == 0) {
                         addDrawerType(DRAWERS.SCALE.getDefaultName(), DRAWERS.SCALE);
@@ -211,7 +207,7 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
         if (this.evaluator != null)
             this.evaluator.stop();
         if (evaluator instanceof TimeEvaluator)
-            ((TimeEvaluator) evaluator).setSpeed(getParameters().getSpeed());
+            ((TimeEvaluator) evaluator).setFrequency(getParameters().getFrequency());
         this.evaluator = evaluator;
         evaluator.start();
     }
@@ -238,9 +234,9 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
     }
 
     @Override
-    public void onEventOccurred(View view, Evaluator evaluator, int occurrenceCount) {
+    public void onEventOccurred(View view, Evaluator evaluator, Evaluator.EVENT_STATUS eventStatus, int occurrenceCount) {
         if (getOnEventOccurred() != null)
-            getOnEventOccurred().onEventOccurred(view, evaluator, occurrenceCount);
+            getOnEventOccurred().onEventOccurred(view, evaluator, eventStatus, occurrenceCount);
     }
 
     public Evaluator.OnEventOccurred getOnEventOccurred() {
@@ -273,15 +269,19 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
         invalidate();
     }
 
-    public float getSpeed() {
-        return getParameters().getSpeed();
+    public float getFrequency() {
+        return getParameters().getFrequency();
+    }
+
+    public void setFrequency(float frequency) {
+        if (getEvaluator() instanceof TimeEvaluator) {
+            TimeEvaluator timeEvaluator = (TimeEvaluator) getEvaluator();
+            timeEvaluator.setFrequency(frequency);
+        }
     }
 
     public void setSpeed(float speed) {
-        if (getEvaluator() instanceof TimeEvaluator) {
-            TimeEvaluator timeEvaluator = (TimeEvaluator) getEvaluator();
-            timeEvaluator.setSpeed(speed);
-        }
+        setFrequency(1 / speed * 1000);
     }
 
     public float getMinZoom() {
@@ -314,21 +314,5 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
 
     public void setMaxAngle(float maxAngle) {
         getParameters().setMaxAngle(maxAngle);
-    }
-
-    public float getMinSpeed() {
-        return getParameters().getMinSpeed();
-    }
-
-    public void setMinSpeed(float minSpeed) {
-        getParameters().setMinSpeed(minSpeed);
-    }
-
-    public float getMaxSpeed() {
-        return getParameters().getMaxSpeed();
-    }
-
-    public void setMaxSpeed(float maxSpeed) {
-        getParameters().setMaxSpeed(maxSpeed);
     }
 }
