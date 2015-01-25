@@ -43,9 +43,9 @@ They both have their own getters and setters.
 First of all you can set your timings, if needed. Then you can start a transition by calling the following methods:
 
 ```java
-dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
-dexCrossFadeImageView.setFadingImageDrawable(myDrawable);
-dexCrossFadeImageView.setFadingImageBitmap(myBitmap);
+    dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
+    dexCrossFadeImageView.setFadingImageDrawable(myDrawable);
+    dexCrossFadeImageView.setFadingImageBitmap(myBitmap);
 ```
 ####Multiple Images
 Or you can set a List or an array of:
@@ -85,12 +85,12 @@ This is the simplest way to use it. Simply add the following attributes to your 
 
 ```xml
     <it.dex.movingimageviewlib.DexMovingImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            dex:zoom="2.0"
-            dex:evaluator="scrollBased"
-            dex:generator="base"
-            dex:drawer="scale|translate" />
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        dex:zoom="2.0"
+        dex:evaluator="scrollBased"
+        dex:generator="base"
+        dex:drawer="scale|translate" />
 ```
 
 Change zoom value to increase or decrease scaling: this way you can enhance the scrolling effect.
@@ -126,12 +126,16 @@ Use the OnEventOccurred interface to listen to every change during execution. Yo
     public void onEventOccurred(View view, Evaluator evaluator, Evaluator.EVENT_STATUS eventStatus, int occurrenceCount) {
         switch (eventStatus) {
             case FIRST_QUARTER:
+                //Your code here:
+                break;
             case THIRD_QUARTER:
-                dexMovingImageView.setFadingImageDrawable(images.getDrawable((int) (Math.random() * images.length())));
+                //Your code here:
                 break;
             case END:
+                //Your code here:
+                break;
             case MIDDLE:
-                dexMovingImageView.setAngle((float) (new Random().nextInt((200 - 160) + 1) + 160));
+                //Your code here:
                 break;
         }
     }
@@ -159,27 +163,27 @@ Currently there are 4 kind of evaluator in this library:
 You can create your own Evaluator by extending the Evaluator class and implementing the following methods:
 
 ```java
-        @Override
-        protected void onCreate(View view) {
-            //Your Code here
-        }
+    @Override
+    protected void onCreate(View view) {
+        //Your Code here
+    }
 
-        @Override
-        public float evaluateX(View view) {
-            //Your Code here
-            return x;
-        }
+    @Override
+    public float evaluateX(View view) {
+        //Your Code here
+        return x;
+    }
 
-        @Override
-        public float evaluateY(View view) {
-            //Your Code here
-            return y;
-        }
+    @Override
+    public float evaluateY(View view) {
+        //Your Code here
+        return y;
+    }
 
-        @Override
-        protected void onDestroy(View view) {
-            //Your Code here
-        }
+    @Override
+    protected void onDestroy(View view) {
+        //Your Code here
+    }
 ```
 
 An evaluator has its lifecycle, so you can optimize the use of any external services or API you use: For example: for the TimeEvaluator a TimerTask is
@@ -189,33 +193,33 @@ it for you. If you need to start or stop those APIs you used, you can call the s
 The following methods are not abstract and their default implementation returns the default values set to the view:
 
 ```java
-        @Override
-        public float evaluateAngle(View view, float defaultAngle) {
-            //Your Code here
-        }
+    @Override
+    public float evaluateAngle(View view, float defaultAngle) {
+        //Your Code here
+    }
 
-        @Override
-        public float evaluateZoom(View view, float defaultZoom) {
-            //Your Code here
-        }
+    @Override
+    public float evaluateZoom(View view, float defaultZoom) {
+        //Your Code here
+    }
 ```
 
 You should also find a way to call the OnEventOccurred implementation:
 
 ```java
-        if (getOnEventOccurred() != null && isNotifyEvent()) {
-            if (someClause) {
-                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.END, ++endLoopCount);
-            } else if (someOtherClause) {
-                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.START, ++startLoopCount);
-            } else if (someOtherClause) {
-                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.MIDDLE, ++middleLoopCount);
-            } else if (someOtherClause) {
-                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.FIRST_QUARTER, ++firstQuarterLoopCount);
-            } else if (someOtherClause) {
-                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.THIRD_QUARTER, ++secondQuarterLoopCount);
-            }
+    if (getOnEventOccurred() != null && isNotifyEvent()) {
+        if (someClause) {
+            getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.END, ++endLoopCount);
+        } else if (someOtherClause) {
+            getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.START, ++startLoopCount);
+        } else if (someOtherClause) {
+            getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.MIDDLE, ++middleLoopCount);
+        } else if (someOtherClause) {
+            getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.FIRST_QUARTER, ++firstQuarterLoopCount);
+        } else if (someOtherClause) {
+            getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.THIRD_QUARTER, ++secondQuarterLoopCount);
         }
+    }
 ```
 
 A DexMovingImageView has one only Evaluator, so you can specify the enum value or the complete class path inside xml file:
