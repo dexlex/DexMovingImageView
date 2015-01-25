@@ -16,7 +16,6 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 
 ![Screenshot](/assets/screenshot/home.png)
 ![Screenshot](/assets/screenshot/grid.png)
-![Screenshot](/assets/screenshot/list.png)
 ![Screenshot](/assets/screenshot/menu.png)
 ![Screenshot](/assets/screenshot/scroll.png)
 ![Screenshot](/assets/screenshot/move_tester.png)
@@ -226,7 +225,7 @@ A DexMovingImageView has one only Evaluator, so you can specify the enum value o
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        **dex:evaluator="timeBased"**
+        dex:evaluator="timeBased"
         dex:images_array="@array/my_images"
         dex:generator="zoomed"
         dex:angle="130"
@@ -244,7 +243,7 @@ or
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        **dex:evaluator="it.dex.movingimageview.MyEvaluator"**
+        dex:evaluator="it.dex.movingimageview.MyEvaluator"
         dex:images_array="@array/my_images"
         dex:generator="zoomed"
         dex:angle="130"
@@ -301,7 +300,7 @@ A DexMovingImageView has one only ValuesGenerator, so you can specify the enum v
         android:src="@drawable/my_image"
         dex:evaluator="timeBased"
         dex:images_array="@array/my_images"
-        **dex:generator="zoomed"**
+        dex:generator="zoomed"
         dex:angle="130"
         dex:loop="true"
         dex:zoom="1.65"
@@ -319,7 +318,7 @@ or
         android:src="@drawable/my_image"
         dex:evaluator="timeBased"
         dex:images_array="@array/my_images"
-        **dex:generator="it.dex.movingimageview.MyValuesGenerator"**
+        dex:generator="it.dex.movingimageview.MyValuesGenerator"
         dex:angle="130"
         dex:loop="true"
         dex:zoom="1.65"
@@ -349,7 +348,7 @@ A DexMovingImageView can have one or more Drawers, so you can specify the values
         dex:angle="130"
         dex:loop="true"
         dex:zoom="1.65"
-        **dex:drawer="scale|rotate|translate"**
+        dex:drawer="scale|rotate|translate"
         dex:still_image_duration_millis="3000"
         dex:transition_duration_millis="1000" />
 ```
