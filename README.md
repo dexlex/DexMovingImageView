@@ -3,6 +3,14 @@
 DMIV aims to provide a flexible and customizable instrument for automated images moving on display. It provides scroll or time based moving. But you can create your own evaluator.
 
 ![Screenshot](/assets/images/dmiv_screenshot.gif)
+![Screenshot](/assets/images/home.png)
+![Screenshot](/assets/images/home.png)
+![Screenshot](/assets/images/grid.png)
+![Screenshot](/assets/images/list.png)
+![Screenshot](/assets/images/menu.png)
+![Screenshot](/assets/images/scroll.png)
+![Screenshot](/assets/images/move_tester.png)
+![Screenshot](/assets/images/move_tester_open.png)
 
 # Features
  * Google Calendar ImageView
@@ -12,7 +20,7 @@ DMIV aims to provide a flexible and customizable instrument for automated images
  * Android 1.5+ support
 
 # Downloads
-[![Demo app](assets/images/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.movingimageview)
+[![Demo app](assets/images/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.dexmovingimageview)
 
 #References
 * [Quick setup](https://github.com/dexlex/DexMovingImageView/wiki/Quinck-Setup)
@@ -27,6 +35,17 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 
 ##Simple
 ###DexCrossFadeImageView
+The view has 2 parameters:
+1. TransitionDurationMillis (default: 300)
+2. StillImageDurationMillis (default: 3000)
+They both have their own getters and setters.
+You can start a transition by calling the following methods:
+```java
+dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
+dexCrossFadeImageView.setFadingImageDrawable(myDrawable);
+dexCrossFadeImageView.setFadingImageBitmap(myBitmap);
+```
+
 ```xml
 <it.dex.movingimageviewlib.DexCrossFadeImageView
         android:id="@+id/image"
@@ -40,12 +59,30 @@ DMIV aims to provide a flexible and customizable instrument for automated images
         dex:transition_duration_millis="500" />
 ```
 
-```java
-DexCrossFadeImageView dexCrossFadeImageView = (DexCrossFadeImageView) view.findViewById(R.id.image);
-dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
+###DexMovigImageView
+
+You can treat it like any other ImageView, but you need to add the following:
+1.Evaluator
+2.ValuesGenerator
+3.Drawers
+
+####Calendar-like View
+This is the simplest way to use it. Simply add the following attributes to your view:
+
+```xml
+<it.dex.movingimageviewlib.DexMovingImageView
+            android:id="@+id/image"
+            style="@style/DexScrollImageViewStyle"
+            dex:zoom="2"
+            dex:drawer="scale|translate"
+            dex:evaluator="timeBased"
+            dex:generator="base"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
 ```
 
-###DexMovigImageView
+####NewsStand-like View
+This is the same as above, but with different evaluator and generator:
 
 ```xml
 <it.dex.movingimageviewlib.DexMovingImageView
@@ -53,9 +90,9 @@ dexCrossFadeImageView.setFadingImageResource(R.drawable.my_image);
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/material"
-        dex:evaluator="simple"
+        dex:evaluator="timeBased"
         dex:images_array="@array/images"
-        dex:generator="base"
+        dex:generator="zoomed"
         dex:angle="130"
         dex:loop="true"
         dex:zoom="1.65"
