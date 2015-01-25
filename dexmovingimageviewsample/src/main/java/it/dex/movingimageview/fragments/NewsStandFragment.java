@@ -63,7 +63,7 @@ public class NewsStandFragment extends Fragment implements Evaluator.OnEventOccu
     public void onEventOccurred(View view, Evaluator evaluator, Evaluator.EVENT_STATUS eventStatus, int occurrenceCount) {
         switch (eventStatus) {
             case FIRST_QUARTER:
-            case SECOND_QUARTER:
+            case THIRD_QUARTER:
                 dexMovingImageView.setFadingImageDrawable(images.getDrawable((int) (Math.random() * images.length())));
                 break;
             case END:

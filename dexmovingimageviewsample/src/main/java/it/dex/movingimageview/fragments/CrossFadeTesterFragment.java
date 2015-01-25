@@ -57,7 +57,7 @@ public class CrossFadeTesterFragment extends Fragment implements View.OnClickLis
         switch (v.getId()) {
             case R.id.play:
                 if (dexCrossFadeImageView.isPlaying()) {
-                    dexCrossFadeImageView.stop();
+                    dexCrossFadeImageView.pause();
                     play.setFadingImageResource(android.R.drawable.ic_media_play);
                 } else {
                     dexCrossFadeImageView.start();

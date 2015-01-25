@@ -105,7 +105,7 @@ public class DexCrossFadeImageView extends ImageView {
         }
     }
 
-    public void stop() {
+    public void pause() {
         setPlaying(false);
     }
 

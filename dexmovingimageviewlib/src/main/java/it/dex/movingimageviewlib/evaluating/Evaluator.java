@@ -110,6 +110,6 @@ public abstract class Evaluator {
     }
 
     public enum EVENT_STATUS {
-        START, FIRST_QUARTER, MIDDLE, SECOND_QUARTER, END
+        START, FIRST_QUARTER, MIDDLE, THIRD_QUARTER, END
     }
 }

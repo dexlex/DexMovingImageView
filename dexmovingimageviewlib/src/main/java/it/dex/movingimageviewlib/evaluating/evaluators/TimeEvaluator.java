@@ -103,7 +103,7 @@ public class TimeEvaluator extends Evaluator implements Runnable {
             } else if (evaluatedValue + (step / 2) >= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) / 4 && evaluatedValue - (step / 2) <= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) / 4) {
                 getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.FIRST_QUARTER, ++firstQuarterLoopCount);
             } else if (evaluatedValue + (step / 2) >= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) * 3 / 4 && evaluatedValue - (step / 2) <= (Parameters.MAX_ANGLE + Parameters.MIN_ANGLE) * 3 / 4) {
-                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.SECOND_QUARTER, ++secondQuarterLoopCount);
+                getOnEventOccurred().onEventOccurred(getView(), this, EVENT_STATUS.THIRD_QUARTER, ++secondQuarterLoopCount);
             }
         }
         if (evaluatedValue >= Parameters.MAX_ANGLE - step) {

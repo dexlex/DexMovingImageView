@@ -17,11 +17,22 @@
   -->
 
 <resources>
+    <dimen name="navigation_drawer_width">320dp</dimen>
 
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- PADDINGS -->
+    <dimen name="dimen_small">5dp</dimen>
+    <dimen name="dimen_medium">10dp</dimen>
+    <dimen name="grid_item_height">120dp</dimen>
+    <dimen name="section_padding">16dp</dimen>
+    <dimen name="recycler_item_width">200dp</dimen>
+    <dimen name="recycler_item_height">150dp</dimen>
+    <dimen name="textview_width">320dp</dimen>
+
+    <dimen name="recycler_horizontal_item_width">400dp</dimen>
+
+    <dimen name="uil_line_spacing">8dp</dimen>
+
+    <!-- TEXT SIZES -->
     <dimen name="title_size">20sp</dimen>
-    <dimen name="navigation_drawer_width">240dp</dimen>
 
 </resources>

@@ -44,7 +44,7 @@
 
             <TextView
                 style="@style/TextViewStyle"
-                android:layout_width="320dp" />
+                android:layout_width="@dimen/textview_width" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
 
             <TextView
                 style="@style/TextViewStyle"
-                android:layout_width="320dp" />
+                android:layout_width="@dimen/textview_width" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
 
             <TextView
                 style="@style/TextViewStyle"
-                android:layout_width="320dp" />
+                android:layout_width="@dimen/textview_width" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
 
             <TextView
                 style="@style/TextViewStyle"
-                android:layout_width="320dp" />
+                android:layout_width="@dimen/textview_width" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
 
             <TextView
                 style="@style/TextViewStyle"
-                android:layout_width="320dp" />
+                android:layout_width="@dimen/textview_width" />
         </LinearLayout>
     </HorizontalScrollView>
 </RelativeLayout>

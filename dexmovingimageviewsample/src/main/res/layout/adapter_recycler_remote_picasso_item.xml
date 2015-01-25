@@ -20,10 +20,10 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/dimen_medium"
     card_view:cardBackgroundColor="@color/accent"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="5dp">
+    card_view:cardCornerRadius="@dimen/dimen_small"
+    card_view:cardElevation="@dimen/dimen_small">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,14 +32,14 @@
 
         <TextView
             style="@style/TitleViewStyle"
-            android:layout_margin="4dp" />
+            android:layout_margin="@dimen/dimen_small" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/dimen_small"
             android:orientation="vertical">
 
             <it.dex.movingimageviewlib.DexMovingImageView
@@ -54,8 +54,8 @@
                 android:ellipsize="end"
                 android:gravity="left"
                 android:lineSpacingExtra="0dp"
-                android:maxHeight="200dp"
-                android:padding="4dp" />
+                android:maxHeight="@dimen/recycler_item_width"
+                android:padding="@dimen/dimen_small" />
 
         </RelativeLayout>
     </LinearLayout>

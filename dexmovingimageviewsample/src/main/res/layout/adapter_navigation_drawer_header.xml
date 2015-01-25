@@ -20,6 +20,6 @@
     android:layout_height="wrap_content"
     android:background="@color/primary"
     android:gravity="center"
-    android:padding="10dp"
+    android:padding="@dimen/dimen_medium"
     android:textColor="@color/secondary"
     android:textStyle="bold" />

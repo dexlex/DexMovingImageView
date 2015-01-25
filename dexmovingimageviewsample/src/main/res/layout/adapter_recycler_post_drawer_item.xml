@@ -20,15 +20,15 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_margin="@dimen/section_padding"
     card_view:cardBackgroundColor="@color/accent"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="5dp">
+    card_view:cardCornerRadius="@dimen/dimen_small"
+    card_view:cardElevation="@dimen/dimen_small">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp">
+        android:padding="@dimen/dimen_small">
 
         <it.dex.movingimageviewlib.DexMovingImageView
             android:id="@+id/image"
@@ -37,27 +37,27 @@
             android:layout_centerInParent="true" />
 
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="@dimen/recycler_horizontal_item_width"
             android:layout_height="match_parent"
             android:layout_alignBottom="@id/image"
             android:layout_alignLeft="@id/image"
             android:layout_alignRight="@id/image"
             android:layout_alignTop="@id/image"
             android:layout_centerInParent="true"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/dimen_small"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 style="@style/TitleViewStyle"
-                android:layout_margin="4dp"
+                android:layout_margin="@dimen/dimen_small"
                 android:gravity="center" />
 
             <TextView
                 style="@style/TextViewStyle"
                 android:gravity="center"
                 android:lineSpacingExtra="0dp"
-                android:padding="4dp" />
+                android:padding="@dimen/dimen_small" />
 
         </LinearLayout>
     </RelativeLayout>

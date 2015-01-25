@@ -19,6 +19,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/selector_navigation_drawer"
-    android:padding="@dimen/activity_horizontal_margin"
+    android:padding="@dimen/section_padding"
     android:textColor="@color/selector_navigation_drawer_text"
     android:textSize="20sp" />

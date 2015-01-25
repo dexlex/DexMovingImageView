@@ -39,10 +39,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_margin="@dimen/section_padding"
         dex:cardBackgroundColor="@color/accent"
-        dex:cardCornerRadius="5dp"
-        dex:cardElevation="5dp">
+        dex:cardCornerRadius="@dimen/dimen_small"
+        dex:cardElevation="@dimen/dimen_small">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 <TextView
                     android:text="Transition Duration in milliseconds"
                     android:layout_width="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginLeft="@dimen/section_padding"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -71,7 +71,7 @@
 
                     <TextView
                         android:text="0"
-                        android:padding="5dp"
+                        android:padding="@dimen/dimen_small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -83,7 +83,7 @@
 
                     <TextView
                         android:text="2000"
-                        android:padding="5dp"
+                        android:padding="@dimen/dimen_small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -91,8 +91,8 @@
                 <TextView
                     android:text="Still Image Duration in milliseconds"
                     android:layout_width="match_parent"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/section_padding"
+                    android:layout_marginLeft="@dimen/section_padding"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -103,7 +103,7 @@
 
                     <TextView
                         android:text="0"
-                        android:padding="5dp"
+                        android:padding="@dimen/dimen_small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:padding="5dp"
+                        android:padding="@dimen/dimen_small"
                         android:text="2000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -124,7 +124,7 @@
             <it.dex.movingimageviewlib.DexCrossFadeImageView
                 android:id="@+id/play"
                 android:layout_width="wrap_content"
-                android:padding="@dimen/activity_horizontal_margin"
+                android:padding="@dimen/section_padding"
                 android:layout_height="wrap_content"
                 android:src="@android:drawable/ic_media_pause"
                 dex:loop="true"

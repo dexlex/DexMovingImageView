@@ -43,16 +43,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_margin="@dimen/section_padding"
         dex:cardBackgroundColor="@color/accent"
-        dex:cardCornerRadius="5dp"
-        dex:cardElevation="5dp">
+        dex:cardCornerRadius="@dimen/dimen_small"
+        dex:cardElevation="@dimen/dimen_small">
 
         <LinearLayout
             android:id="@+id/values_layout"
             android:layout_width="match_parent"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/section_padding"
+            android:paddingBottom="@dimen/section_padding"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
 
@@ -166,11 +166,11 @@
         android:visibility="gone"
         android:layout_above="@id/values_card_view"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/section_padding"
+        android:layout_marginRight="@dimen/section_padding"
         dex:cardBackgroundColor="@color/accent"
-        dex:cardCornerRadius="5dp"
-        dex:cardElevation="5dp">
+        dex:cardCornerRadius="@dimen/dimen_small"
+        dex:cardElevation="@dimen/dimen_small">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -184,7 +184,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:padding="5dp"
+                    android:padding="@dimen/dimen_small"
                     android:orientation="horizontal"
                     android:gravity="center"
                     android:layout_height="wrap_content">
@@ -200,7 +200,7 @@
                         android:id="@+id/evaluators"
                         android:layout_width="match_parent"
                         android:textColor="@color/secondary"
-                        android:padding="5dp"
+                        android:padding="@dimen/dimen_small"
                         android:entries="@array/evaluators"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"></Spinner>
@@ -214,7 +214,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:gravity="center"
-                    android:padding="5dp"
+                    android:padding="@dimen/dimen_small"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
@@ -230,7 +230,7 @@
                         android:layout_width="match_parent"
                         android:entries="@array/generators"
                         android:textColor="@color/secondary"
-                        android:padding="5dp"
+                        android:padding="@dimen/dimen_small"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"></Spinner>
                 </LinearLayout>
@@ -241,7 +241,7 @@
                     android:background="@color/primary" />
 
                 <LinearLayout
-                    android:padding="5dp"
+                    android:padding="@dimen/dimen_small"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:gravity="center"
@@ -264,7 +264,7 @@
                             android:id="@+id/drawer_scale"
                             android:layout_width="wrap_content"
                             android:textColor="@color/secondary"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:text="Scale"
                             android:layout_height="wrap_content" />
 
@@ -272,14 +272,14 @@
                             android:id="@+id/drawer_rotate"
                             android:textColor="@color/secondary"
                             android:layout_width="wrap_content"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:text="Rotate"
                             android:layout_height="wrap_content" />
 
                         <CheckBox
                             android:id="@+id/drawer_translate"
                             android:layout_width="wrap_content"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:textColor="@color/secondary"
                             android:text="Translate"
                             android:layout_height="wrap_content" />
@@ -295,7 +295,7 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:gravity="center"
-                    android:padding="5dp"
+                    android:padding="@dimen/dimen_small"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
@@ -303,7 +303,7 @@
                         android:text="Zoom"
                         android:layout_width="match_parent"
                         android:textColor="@color/secondary"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginLeft="@dimen/section_padding"
                         android:layout_height="wrap_content" />
 
                     <LinearLayout
@@ -314,7 +314,7 @@
 
                         <TextView
                             android:text="0"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:textColor="@color/secondary"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -329,7 +329,7 @@
                         <TextView
                             android:text="4.0"
                             android:textColor="@color/secondary"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -337,9 +337,9 @@
                     <TextView
                         android:text="Angle"
                         android:layout_width="match_parent"
-                        android:paddingTop="@dimen/activity_horizontal_margin"
+                        android:paddingTop="@dimen/section_padding"
                         android:textColor="@color/secondary"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginLeft="@dimen/section_padding"
                         android:layout_height="wrap_content" />
 
                     <LinearLayout
@@ -351,7 +351,7 @@
                         <TextView
                             android:text="0"
                             android:textColor="@color/secondary"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -364,7 +364,7 @@
 
                         <TextView
                             android:textColor="@color/secondary"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:text="360"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -373,9 +373,9 @@
                     <TextView
                         android:text="Speed"
                         android:layout_width="match_parent"
-                        android:paddingTop="@dimen/activity_horizontal_margin"
+                        android:paddingTop="@dimen/section_padding"
                         android:textColor="@color/secondary"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginLeft="@dimen/section_padding"
                         android:layout_height="wrap_content" />
 
                     <LinearLayout
@@ -387,7 +387,7 @@
                         <TextView
                             android:text="0"
                             android:textColor="@color/secondary"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -400,7 +400,7 @@
 
                         <TextView
                             android:textColor="@color/secondary"
-                            android:padding="5dp"
+                            android:padding="@dimen/dimen_small"
                             android:text="200"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
