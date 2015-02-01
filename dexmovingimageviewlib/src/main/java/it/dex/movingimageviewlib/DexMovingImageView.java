@@ -405,9 +405,9 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
     }
 
     /**
-     * Get the current value for Speed
+     * Set the current value for Speed
      *
-     * @return the speed value
+     * @param speed the new speed
      */
     public void setSpeed(float speed) {
         setFrequency(1 / speed * 1000);
