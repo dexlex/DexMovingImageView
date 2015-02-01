@@ -18,7 +18,9 @@
 
 
 
-include ':dexmovingimageviewsample', ':dexmovingimageviewlib'
+
+
+include  ':dexmovingimageviewlib',':dexmovingimageviewsample'
 
 
 

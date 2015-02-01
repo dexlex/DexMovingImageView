@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DexMoveImageView.iml" filepath="$PROJECT_DIR$/DexMoveImageView.iml" />
       <module fileurl="file://$PROJECT_DIR$/DexMovingImageView.iml" filepath="$PROJECT_DIR$/DexMovingImageView.iml" />
       <module fileurl="file://$PROJECT_DIR$/dexmovingimageviewlib/dexmovingimageviewlib.iml" filepath="$PROJECT_DIR$/dexmovingimageviewlib/dexmovingimageviewlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/dexmovingimageviewsample/dexmovingimageviewsample.iml" filepath="$PROJECT_DIR$/dexmovingimageviewsample/dexmovingimageviewsample.iml" />
