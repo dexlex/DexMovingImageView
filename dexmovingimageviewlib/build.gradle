@@ -18,6 +18,8 @@
 
 
 
+
+
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
@@ -44,7 +46,7 @@ android {
 
 def siteUrl = 'https://github.com/dexlex/DexMovingImageView'
 def gitUrl = 'https://github.com/dexlex/DexMovingImageView.git'
-group = "<maven group id>"
+group = "it.dex.dexmovingimageview"
 
 install {
     repositories.mavenInstaller {

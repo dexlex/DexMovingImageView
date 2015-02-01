@@ -362,6 +362,8 @@ Credits
 
 Author: Diego Grancini (dexlex84@gmail.com)
 
+Any hint, suggestion, improvement or comment will be appreciated
+
 <a href="https://plus.google.com/u/0/+DiegoGrancini/posts">
   <img alt="Follow me on Google+"
        src="/assets/images/google.png" />
