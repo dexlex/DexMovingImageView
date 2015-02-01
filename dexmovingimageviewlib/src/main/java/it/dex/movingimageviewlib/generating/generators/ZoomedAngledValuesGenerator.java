@@ -16,12 +16,20 @@
 
 package it.dex.movingimageviewlib.generating.generators;
 
-import android.util.Log;
-
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * DexMoveImageView created by Diego on 13/12/2014.
+ * The ZoomedAngled ValuesGenerator implementation: it generates:
+ * <p/>
+ * - X value: it's calculated sinusoidally considering the image can be positioned from -viewWidth to deviceWidth + viewWidth. Then the value is normalized by angle value
+ * <p/>
+ * - Y value: it's calculated sinusoidally considering the image can be positioned from -viewHeight to deviceHeight + viewHeight. Then the value is normalized by angle value
+ * <p/>
+ * - Zoom value: it's calculated sinusoidally from minZoom to maxZoom
+ * <p/>
+ * - Angle value: as the default angle
+ * <p/>
+ * ZoomedAngledValuesGenerator created by Diego Grancini on 13/12/2014.
  */
 public class ZoomedAngledValuesGenerator extends AngledValuesGenerator {
 
@@ -35,7 +43,6 @@ public class ZoomedAngledValuesGenerator extends AngledValuesGenerator {
         float maxZoom = getParameters().getMaxZoom();
         float range = maxZoom - minZoom;
         float t = (float) (Math.abs(Math.sin(Math.toRadians(zoom))) * range + minZoom);
-        Log.d("ZOOM", t + "");
         return t;
     }
 }

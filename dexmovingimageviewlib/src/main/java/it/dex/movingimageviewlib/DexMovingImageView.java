@@ -40,7 +40,9 @@ import it.dex.movingimageviewlib.generating.ValuesGeneratorChooser;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * Created by Diego on 06/12/2014.
+ * This view provides a structured but simple way to create and add modifications to the image.
+ * <p/>
+ * DexMovingImageView created by Diego Grancini on 06/12/2014.
  */
 public class DexMovingImageView extends DexCrossFadeImageView implements Evaluator.OnEventOccurred {
     private Parameters parameters = new Parameters();
@@ -175,34 +177,77 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
         super.onDraw(canvas);
     }
 
-    public void addDrawerType(String drawerName, DRAWERS moverType) throws IllegalArgumentException {
-        addDrawer(drawerName, DrawerChooser.get(moverType));
-    }
-
-    public void removeDrawerType(String drawerName) throws IllegalArgumentException {
-        removeDrawer(drawerName);
-    }
-
+    /**
+     * Get all the values set
+     *
+     * @return the bean containing the generated values
+     */
     public Parameters getParameters() {
         return parameters;
     }
 
+    /**
+     * Add a drawer with a name
+     *
+     * @param drawerName the name used to add the drawer
+     * @param moverType  the drawer enum value that corresponds to the drawer
+     * @throws IllegalArgumentException
+     */
+    public void addDrawerType(String drawerName, DRAWERS moverType) throws IllegalArgumentException {
+        addDrawer(drawerName, DrawerChooser.get(moverType));
+    }
+
+    /**
+     * Remove the drawer previously added with the specified name
+     *
+     * @param drawerName the name of the drawer to remove
+     * @throws IllegalArgumentException
+     */
+    public void removeDrawerType(String drawerName) throws IllegalArgumentException {
+        removeDrawer(drawerName);
+    }
+
+    /**
+     * Get the used values generator
+     *
+     * @return the used ValuesGenerator
+     */
     public ValuesGenerator getValuesGenerator() {
         return valuesGenerator;
     }
 
+    /**
+     * Set a ValuesGenerator
+     *
+     * @param valuesGenerator the ValuesGenerator to use
+     */
     public void setValuesGenerator(ValuesGenerator valuesGenerator) {
         this.valuesGenerator = valuesGenerator;
     }
 
+    /**
+     * Set a ValuesGenerator using the enumeration value
+     *
+     * @param valuesGeneratorType the enumeration value to use
+     */
     public void setValuesGeneratorType(VALUESGENERATORS valuesGeneratorType) {
         setValuesGenerator(ValuesGeneratorChooser.get(valuesGeneratorType, parameters));
     }
 
+    /**
+     * Get the evaluator used
+     *
+     * @return the used evaluator
+     */
     public Evaluator getEvaluator() {
         return evaluator;
     }
 
+    /**
+     * Set an evaluator
+     *
+     * @param evaluator the evaluator to be set
+     */
     public void setEvaluator(Evaluator evaluator) {
         if (this.evaluator != null)
             this.evaluator.stop();
@@ -212,23 +257,50 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
         evaluator.start();
     }
 
+    /**
+     * Set an evaluator usign the enumeration value
+     *
+     * @param coordinatorType the enumeration value to use
+     */
     public void setEvaluatorType(EVALUATORS coordinatorType) {
         setEvaluator(EvaluatorChooser.get(coordinatorType, this, this));
     }
 
+    /**
+     * Add a drawer with the specified name
+     *
+     * @param drawerName the name of the drawer to be added
+     * @param drawer     the drawer to be added
+     */
     public void addDrawer(String drawerName, Drawer drawer) {
         drawers.put(drawerName, drawer);
     }
 
+    /**
+     * Check if a drawer is added
+     *
+     * @param drawerType the enumeration value to be checked
+     * @return true if the drawer has been added, false otherwise
+     */
     public boolean isDrawerAdded(DRAWERS drawerType) {
         Set<String> set = drawers.keySet();
         return set.contains(drawerType.getDefaultName());
     }
 
+    /**
+     * Remove the drawer with the specified name
+     *
+     * @param drawerName the name of the drawer to remove
+     */
     public void removeDrawer(String drawerName) {
         drawers.remove(drawerName);
     }
 
+    /**
+     * Set an instance of OnValueChanged
+     *
+     * @param onValueChanged the OnValueChange instance to be set
+     */
     public void setOnValueChanged(OnValueChanged onValueChanged) {
         this.onValueChanged = onValueChanged;
     }
@@ -239,40 +311,92 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
             getOnEventOccurred().onEventOccurred(view, evaluator, eventStatus, occurrenceCount);
     }
 
+    /**
+     * Get the used instance of OnEventOccurred interface
+     *
+     * @return ht eused instance of OnEventOccurred interface
+     */
     public Evaluator.OnEventOccurred getOnEventOccurred() {
         return onEventOccurred;
     }
 
+    /**
+     * Set an instance of OnEventOccurred interface
+     *
+     * @param onEventOccurred the instance of OnEventOccurred to be set
+     */
     public void setOnEventOccurred(Evaluator.OnEventOccurred onEventOccurred) {
         this.onEventOccurred = onEventOccurred;
     }
 
+    /**
+     * This interface is used as a listener to be called when a value is changed
+     */
     public interface OnValueChanged {
+        /**
+         * Method called when a value is changed
+         *
+         * @param view  the DexMovingImageView the value is changed for
+         * @param x     the x value
+         * @param y     the y value
+         * @param z     the zoom value
+         * @param angle the angle value
+         */
         public void onValueChanged(View view, float x, float y, float z, float angle);
     }
 
+    /**
+     * Get the current value for Zoom
+     *
+     * @return the zoom value
+     */
     public float getZoom() {
         return getParameters().getZoom();
     }
 
+    /**
+     * Set a new value for Zoom
+     *
+     * @param zoom the new zoom value
+     */
     public void setZoom(float zoom) {
         getParameters().setZoom(zoom);
         invalidate();
     }
 
+    /**
+     * Get the current value for Angle
+     *
+     * @return the angle value
+     */
     public float getAngle() {
         return getParameters().getAngle();
     }
 
+    /**
+     * Set a new value for Angle
+     *
+     * @param angle the new angle value
+     */
     public void setAngle(float angle) {
         getParameters().setAngle(angle);
         invalidate();
     }
 
+    /**
+     * Get the current value for Frequency
+     *
+     * @return the frequency value
+     */
     public float getFrequency() {
         return getParameters().getFrequency();
     }
 
+    /**
+     * Set a new value for Frequency
+     *
+     * @param frequency the new frequency value
+     */
     public void setFrequency(float frequency) {
         if (getEvaluator() instanceof TimeEvaluator) {
             TimeEvaluator timeEvaluator = (TimeEvaluator) getEvaluator();
@@ -280,38 +404,83 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
         }
     }
 
+    /**
+     * Get the current value for Speed
+     *
+     * @return the speed value
+     */
     public void setSpeed(float speed) {
         setFrequency(1 / speed * 1000);
     }
 
+    /**
+     * Get the minimum possible zoom value
+     *
+     * @return the minimum zoom
+     */
     public float getMinZoom() {
         return getParameters().getMinZoom();
     }
 
+    /**
+     * Set the minimum possible zoom value
+     *
+     * @param minZoom the minimum zoom
+     */
     public void setMinZoom(float minZoom) {
         getParameters().setMinZoom(minZoom);
     }
 
+    /**
+     * Get the maximum possible zoom value
+     *
+     * @return the maximum zoom
+     */
     public float getMaxZoom() {
         return getParameters().getMaxZoom();
     }
 
+    /**
+     * Set the maximum possible zoom value
+     *
+     * @param maxZoom the maximum zoom
+     */
     public void setMaxZoom(float maxZoom) {
         getParameters().setMaxZoom(maxZoom);
     }
 
+    /**
+     * Get the minimum possible angle value
+     *
+     * @return the minimum angle
+     */
     public float getMinAngle() {
         return getParameters().getMinAngle();
     }
 
+    /**
+     * Set the minimum possible angle value
+     *
+     * @param minAngle the minimum angle
+     */
     public void setMinAngle(float minAngle) {
         getParameters().setMinAngle(minAngle);
     }
 
+    /**
+     * Get the maximum possible angle value
+     *
+     * @return the maximum angle
+     */
     public float getMaxAngle() {
         return getParameters().getMaxAngle();
     }
 
+    /**
+     * Set the maximum possible angle value
+     *
+     * @param maxAngle the maximum angle
+     */
     public void setMaxAngle(float maxAngle) {
         getParameters().setMaxAngle(maxAngle);
     }

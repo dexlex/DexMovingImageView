@@ -22,7 +22,9 @@ import it.dex.movingimageviewlib.drawing.Drawer;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * DexMoveImageView created by Diego on 05/01/2015.
+ * The drawer that scale the canvas using zoom value. The pivots used are the middle width and middle height of the view.
+ * <p/>
+ * ScaleDrawer created by Diego Grancini on 05/01/2015.
  */
 public class ScaleDrawer implements Drawer {
 

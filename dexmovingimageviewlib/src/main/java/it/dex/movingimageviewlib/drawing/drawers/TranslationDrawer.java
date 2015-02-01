@@ -22,7 +22,9 @@ import it.dex.movingimageviewlib.drawing.Drawer;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * Created by Diego on 08/12/2014.
+ * The drawer that translate the canvas using x and y values
+ * <p/>
+ * TranslationDrawer created by Diego Grancini on 08/12/2014.
  */
 public class TranslationDrawer implements Drawer {
 

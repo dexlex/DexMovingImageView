@@ -21,12 +21,21 @@ import it.dex.movingimageviewlib.drawing.drawers.ScaleDrawer;
 import it.dex.movingimageviewlib.drawing.drawers.TranslationDrawer;
 
 /**
- * Created by Diego on 08/12/2014.
+ * Utility class used to return the right Drawer instance based on the DRAWERS enumeration value
+ * <p/>
+ * DrawerChooser created by Diego Grancini on 08/12/2014.
  */
 public class DrawerChooser {
 
-    public static Drawer get(DRAWERS mover) throws IllegalArgumentException {
-        switch (mover) {
+    /**
+     * Return an instance of Drawer using the DRAWERS enumeration value
+     *
+     * @param drawerType the type of drawer to create
+     * @return the right instance of Evaluator
+     * @throws IllegalArgumentException if evaluatorType doesn't match any EVALUATORS value
+     */
+    public static Drawer get(DRAWERS drawerType) throws IllegalArgumentException {
+        switch (drawerType) {
             case SCALE:
                 return new ScaleDrawer();
             case TRANSLATE:

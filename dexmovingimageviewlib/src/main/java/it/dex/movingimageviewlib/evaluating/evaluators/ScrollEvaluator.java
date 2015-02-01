@@ -22,7 +22,9 @@ import android.view.ViewTreeObserver;
 import it.dex.movingimageviewlib.evaluating.Evaluator;
 
 /**
- * DexMoveImageView created by Diego on 13/12/2014.
+ * Evaluator class that use a ScrollChangeListener on the View to generate values. Those values are the current position of the view on the screen
+ * <p/>
+ * ScrollEvaluator created by Diego Grancini on 13/12/2014.
  */
 public class ScrollEvaluator extends Evaluator implements ViewTreeObserver.OnScrollChangedListener {
     private int[] viewLocation = new int[2];

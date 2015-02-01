@@ -26,7 +26,9 @@ import android.view.View;
 import it.dex.movingimageviewlib.evaluating.Evaluator;
 
 /**
- * DexMoveImageView created by Diego on 03/01/2015.
+ * Evaluator class that use an OnSensorChanged implementation to generate values.
+ * <p/>
+ * GyroscopeEvaluator created by Diego Grancini on 03/01/2015.
  */
 public class GyroscopeEvaluator extends Evaluator implements SensorEventListener {
     private static final float MIN_TIME_STEP = (1f / 40f);

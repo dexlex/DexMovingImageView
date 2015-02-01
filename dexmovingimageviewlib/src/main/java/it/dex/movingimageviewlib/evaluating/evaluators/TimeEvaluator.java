@@ -25,10 +25,16 @@ import it.dex.movingimageviewlib.evaluating.Evaluator;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * DexMoveImageView created by Diego on 13/12/2014.
+ * Evaluator class that use a Timer to generate automatic values.
+ * <p/>
+ * TimeEvaluator created by Diego Grancini on 13/12/2014.
  */
 public class TimeEvaluator extends Evaluator implements Runnable {
+    /**
+     * The float value used to be incremented and returned in the evaluate methods implementation of this Evaluator
+     */
     protected float evaluatedValue;
+
     private float frequency = 30;
     private final float step = 0.1f;
 
@@ -112,10 +118,20 @@ public class TimeEvaluator extends Evaluator implements Runnable {
         getView().invalidate();
     }
 
+    /**
+     * Get the set frequency
+     *
+     * @return the current frequency
+     */
     public float getFrequency() {
         return frequency;
     }
 
+    /**
+     * Set a new frequency
+     *
+     * @param frequency the new frequency to be set
+     */
     public void setFrequency(float frequency) {
         this.frequency = frequency;
         restart();

@@ -1,1 +1,8 @@
+it.dex.movingimageviewlib
+it.dex.movingimageviewlib.drawing
+it.dex.movingimageviewlib.drawing.drawers
+it.dex.movingimageviewlib.evaluating
+it.dex.movingimageviewlib.evaluating.evaluators
+it.dex.movingimageviewlib.generating
 it.dex.movingimageviewlib.generating.generators
+it.dex.movingimageviewlib.parameters

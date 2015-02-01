@@ -21,7 +21,9 @@ import android.view.View;
 import it.dex.movingimageviewlib.evaluating.Evaluator;
 
 /**
- * DexMoveImageView created by Diego on 10/01/2015.
+ * Evaluator class that always returns default values.
+ * <p/>
+ * SimpleEvaluator created by Diego Grancini on 10/01/2015.
  */
 public class SimpleEvaluator extends Evaluator {
 

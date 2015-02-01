@@ -17,10 +17,27 @@
 package it.dex.movingimageviewlib.evaluating;
 
 /**
- * Created by Diego on 08/12/2014.
+ * Helpful enumeration used to map a value to the corresponding Evaluator
+ * <p/>
+ * EVALUATORS created by Diego Grancini on 08/12/2014.
  */
 public enum EVALUATORS {
-    SIMPLE(0), SCROLL(1), TIME(2), GYROSCOPE(4);
+    /**
+     * It maps 0 with Simple value
+     */
+    SIMPLE(0),
+    /**
+     * It maps 1 with Scroll value
+     */
+    SCROLL(1),
+    /**
+     * It maps 2 with Time value
+     */
+    TIME(2),
+    /**
+     * It maps 3 with Gyroscope value
+     */
+    GYROSCOPE(3);
 
     private int type;
 
@@ -28,6 +45,13 @@ public enum EVALUATORS {
         this.type = type;
     }
 
+    /**
+     * Map the Evaluator value with the type
+     *
+     * @param type corresponding to the enumeration value
+     * @return the corresponding value
+     * @throws IllegalArgumentException if type doesn't match any value
+     */
     public static EVALUATORS map(int type) throws IllegalArgumentException {
         switch (type) {
             case 0:
@@ -43,6 +67,11 @@ public enum EVALUATORS {
         }
     }
 
+    /**
+     * Get the mapping type of a EVALUATOR Value
+     *
+     * @return type of the value
+     */
     public int getType() {
         return type;
     }

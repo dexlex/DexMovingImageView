@@ -24,12 +24,23 @@ import it.dex.movingimageviewlib.evaluating.evaluators.SimpleEvaluator;
 import it.dex.movingimageviewlib.evaluating.evaluators.TimeEvaluator;
 
 /**
- * Created by Diego on 08/12/2014.
+ * Utility class used to return the right Evaluator instance based on the EVALUATORS enumeration value
+ * <p/>
+ * EvaluatorChooser created by Diego Grancini on 08/12/2014.
  */
 public class EvaluatorChooser {
 
-    public static Evaluator get(EVALUATORS evaluator, View view, Evaluator.OnEventOccurred onEventOccurred) throws IllegalArgumentException {
-        switch (evaluator) {
+    /**
+     * Return an instance of Evaluator using the EVALUATORS enumeration value
+     *
+     * @param evaluatorType   the type of evaluator to create
+     * @param view            The DexMovingImageView the evaluator will be used for
+     * @param onEventOccurred The instance of OnEventOccurred to use with the evaluater if any
+     * @return the right instance of Evaluator
+     * @throws IllegalArgumentException if evaluatorType doesn't match any EVALUATORS value
+     */
+    public static Evaluator get(EVALUATORS evaluatorType, View view, Evaluator.OnEventOccurred onEventOccurred) throws IllegalArgumentException {
+        switch (evaluatorType) {
             case SIMPLE:
                 return new SimpleEvaluator(view);
             case SCROLL:

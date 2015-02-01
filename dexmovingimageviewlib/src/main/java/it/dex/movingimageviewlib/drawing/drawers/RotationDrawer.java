@@ -22,7 +22,9 @@ import it.dex.movingimageviewlib.drawing.Drawer;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * Created by Diego on 08/12/2014.
+ * The drawer that rotate the canvas using angle value
+ * <p/>
+ * RotationDrawer created by Diego Grancini on 08/12/2014.
  */
 public class RotationDrawer implements Drawer {
 

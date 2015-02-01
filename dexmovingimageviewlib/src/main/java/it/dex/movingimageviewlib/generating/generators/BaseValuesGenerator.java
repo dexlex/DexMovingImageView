@@ -20,7 +20,17 @@ import it.dex.movingimageviewlib.generating.ValuesGenerator;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * DexMoveImageView created by Diego on 13/12/2014.
+ * The default ValuesGenerator implementation: it generates:
+ * <p/>
+ * - X value: it's calculated linearly considering the image can be positioned from -viewWidth to deviceWidth + viewWidth
+ * <p/>
+ * - Y value: it's calculated linearly considering the image can be positioned from -viewHeight to deviceHeight + viewHeight
+ * <p/>
+ * - Zoom value: as the default zoom
+ * <p/>
+ * - Angle value: as the default angle
+ * <p/>
+ * BaseValuesGenerator created by Diego Grancini on 13/12/2014.
  */
 public class BaseValuesGenerator extends ValuesGenerator {
 

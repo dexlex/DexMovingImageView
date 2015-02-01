@@ -17,10 +17,23 @@
 package it.dex.movingimageviewlib.generating;
 
 /**
- * Created by Diego on 08/12/2014.
+ * Helpful enumeration used to map a value to the corresponding ValuesGenerator
+ * <p/>
+ * VALUESGENERATORS created by Diego Grancini on 08/12/2014.
  */
 public enum VALUESGENERATORS {
-    BASE(0), ANGLED(1), ZOOMED(2);
+    /**
+     * It maps 0 with Base value
+     */
+    BASE(0),
+    /**
+     * It maps 1 with Angled value
+     */
+    ANGLED(1),
+    /**
+     * It maps 2 with Zoomed value
+     */
+    ZOOMED(2);
 
     private int type;
 
@@ -28,6 +41,13 @@ public enum VALUESGENERATORS {
         this.type = type;
     }
 
+    /**
+     * Map the ValuesGenerator value with the type
+     *
+     * @param type corresponding to the enumeration value
+     * @return the corresponding value
+     * @throws IllegalArgumentException if type doesn't match any value
+     */
     public static VALUESGENERATORS map(int type) throws IllegalArgumentException {
         switch (type) {
             case 0:
@@ -41,6 +61,11 @@ public enum VALUESGENERATORS {
         }
     }
 
+    /**
+     * Get the mapping type of a VALUESGENERATOR Value
+     *
+     * @return type of the value
+     */
     public int getType() {
         return type;
     }

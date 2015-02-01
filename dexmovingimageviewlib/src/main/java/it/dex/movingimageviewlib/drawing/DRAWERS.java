@@ -17,10 +17,23 @@
 package it.dex.movingimageviewlib.drawing;
 
 /**
- * Created by Diego on 08/12/2014.
+ * Helpful enumeration used to map a value to the corresponding Drawer
+ * <p/>
+ * DRAWERS created by Diego Grancini on 08/12/2014.
  */
 public enum DRAWERS {
-    SCALE(0, "Scale"), TRANSLATE(1, "Translate"), ROTATE(2, "Rotate");
+    /**
+     * It maps 0 with Scale value
+     */
+    SCALE(0, "Scale"),
+    /**
+     * It maps 1 with Translate value
+     */
+    TRANSLATE(1, "Translate"),
+    /**
+     * It maps 2 with Rotate value
+     */
+    ROTATE(2, "Rotate");
 
     private int type;
     private String defaultName;
@@ -30,6 +43,14 @@ public enum DRAWERS {
         this.defaultName = defaultName;
     }
 
+
+    /**
+     * Map the Drawer value with the type
+     *
+     * @param type corresponding to the enumeration value
+     * @return the corresponding value
+     * @throws IllegalArgumentException if type doesn't match any value
+     */
     public static DRAWERS map(int type) throws IllegalArgumentException {
         switch (type) {
             case 0:
@@ -43,10 +64,20 @@ public enum DRAWERS {
         }
     }
 
+    /**
+     * Get the mapping type of a DRAWER Value
+     *
+     * @return type of the value
+     */
     public int getType() {
         return type;
     }
 
+    /**
+     * Get the default name
+     *
+     * @return default name
+     */
     public String getDefaultName() {
         return defaultName;
     }

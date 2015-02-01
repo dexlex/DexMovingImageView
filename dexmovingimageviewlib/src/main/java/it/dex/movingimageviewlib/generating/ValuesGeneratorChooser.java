@@ -22,12 +22,22 @@ import it.dex.movingimageviewlib.generating.generators.ZoomedAngledValuesGenerat
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * Created by Diego on 08/12/2014.
+ * Utility class used to return the right ValuesGenerator instance based on the VALUESGENERATORS enumeration value
+ * <p/>
+ * ValuesGeneratorChooser created by Diego Grancini on 08/12/2014.
  */
 public class ValuesGeneratorChooser {
 
-    public static ValuesGenerator get(VALUESGENERATORS mover, Parameters parameters) throws IllegalArgumentException {
-        switch (mover) {
+    /**
+     * Return an instance of ValuesGenerator using the VALUESGENERATORS enumeration value
+     *
+     * @param valueGeneratorType enumeration value
+     * @param parameters         initial values
+     * @return the right instance of ValuesGenerator
+     * @throws IllegalArgumentException if valueGeneratorType doesn't match any VALUESGENERATOR value
+     */
+    public static ValuesGenerator get(VALUESGENERATORS valueGeneratorType, Parameters parameters) throws IllegalArgumentException {
+        switch (valueGeneratorType) {
             case BASE:
                 return new BaseValuesGenerator(parameters);
             case ANGLED:

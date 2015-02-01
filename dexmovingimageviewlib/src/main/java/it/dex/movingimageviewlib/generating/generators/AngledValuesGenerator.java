@@ -20,7 +20,17 @@ import it.dex.movingimageviewlib.generating.ValuesGenerator;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * DexMoveImageView created by Diego on 13/12/2014.
+ * The Angled ValuesGenerator implementation: it generates:
+ * <p/>
+ * - X value: it's calculated sinusoidally considering the image can be positioned from -viewWidth to deviceWidth + viewWidth. Then the value is normalized by angle value
+ * <p/>
+ * - Y value: it's calculated sinusoidally considering the image can be positioned from -viewHeight to deviceHeight + viewHeight. Then the value is normalized by angle value
+ * <p/>
+ * - Zoom value: as the default zoom
+ * <p/>
+ * - Angle value: as the default angle
+ * <p/>
+ * AngledValuesGenerator created by Diego Grancini on 13/12/2014.
  */
 public class AngledValuesGenerator extends ValuesGenerator {
 

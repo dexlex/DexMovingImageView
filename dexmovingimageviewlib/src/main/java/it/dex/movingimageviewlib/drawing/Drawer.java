@@ -21,8 +21,16 @@ import android.graphics.Canvas;
 import it.dex.movingimageviewlib.parameters.Parameters;
 
 /**
- * DexMoveImageView created by Diego on 21/12/2014.
+ * A Drawer specifies how to use the generated values to draw the image inside the ImageView
+ * <p/>
+ * Drawer created by Diego Grancini on 21/12/2014.
  */
 public interface Drawer {
+    /**
+     * This method applies a transformation to the Canvas to change the view
+     *
+     * @param canvas     the canvas on which the transformations will be drawn
+     * @param parameters the generated values to be applied in the transformation
+     */
     public void onDraw(Canvas canvas, Parameters parameters);
 }
