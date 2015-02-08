@@ -20,11 +20,15 @@
 
 
 
+
+
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'signing'
 
 version = "0.1.0"
+group = "it.dex.dexmovingimageview"
 
 android {
     compileSdkVersion 21
@@ -46,15 +50,23 @@ android {
 
 def siteUrl = 'https://github.com/dexlex/DexMovingImageView'
 def gitUrl = 'https://github.com/dexlex/DexMovingImageView.git'
-group = "it.dex.dexmovingimageview"
+
+signing {
+    sign configurations.archives
+}
 
 install {
     repositories.mavenInstaller {
+        beforeDeployment {
+            MavenDeployment deployment -> signing.signPom(deployment)
+        }
+
         pom {
             project {
                 packaging 'aar'
 
                 name 'DexMovingImageView'
+                description 'DMIV aims to provide a flexible and customizable instrument for automated images moving on display. It provides scroll, gyroscope or time based moving. But you can create your own evaluator.'
                 url siteUrl
 
                 licenses {
@@ -80,6 +92,8 @@ install {
         }
     }
 }
+
+
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -121,3 +135,5 @@ bintray {
         publish = true
     }
 }
+
+//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

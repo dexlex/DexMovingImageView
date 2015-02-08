@@ -21,6 +21,28 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 ![Screenshot](/assets/screenshot/move_tester.png)
 ![Screenshot](/assets/screenshot/move_tester_open.png)
 
+# Setup
+## Setup
+
+DexMovingImageView is pushed to Maven Central as an AAR. Add the following to your `build.gradle`.
+
+```gradle
+    dependencies {
+        compile 'it.dex.dexmovingimageview:dexmovingimageviewlib:0.1.0'
+    }
+```
+
+or the following using Maven:
+
+```xml
+    <dependency>
+        <groupid>it.dex.dexmovingimageview</groupid>
+        <artifactid>dexmovingimageviewlib</artifactid>
+        <version>0.1.0</version>
+        <type>aar</type>
+    </dependency>
+```
+
 # Usage
 
 ##Simple
