@@ -20,6 +20,10 @@
 
 
 
+
+
+
+
 include  ':dexmovingimageviewlib',':dexmovingimageviewsample'
 
 
