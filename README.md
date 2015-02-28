@@ -1,4 +1,4 @@
-# ![Logo](/assets/images/dmiv.png) exMovingImageView
+# ![Logo](/assets/images/dmiv.png) DexMovingImageView
 
 DMIV aims to provide a flexible and customizable instrument for automated images moving on display. It provides scroll, gyroscope or time based moving. But you can create your own evaluator.
 
