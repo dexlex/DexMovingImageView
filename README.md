@@ -21,6 +21,10 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 ![Screenshot](/assets/screenshot/move_tester.png)
 ![Screenshot](/assets/screenshot/move_tester_open.png)
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DexMovingImageView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1601)
+
+
+
 # Setup
 
 DexMovingImageView is pushed to Maven Central as an AAR. Add the following to build.gradle.
