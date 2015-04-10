@@ -1,5 +1,7 @@
 # ![Logo](/assets/images/dmiv.png) DexMovingImageView
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DexMovingImageView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1601)
+
 DMIV aims to provide a flexible and customizable instrument for automated images moving on display. It provides scroll, gyroscope or time based moving. But you can create your own evaluator.
 
 ![Screenshot](/assets/images/dmiv_screenshot.gif)
@@ -10,6 +12,9 @@ DMIV aims to provide a flexible and customizable instrument for automated images
  * Structured system to create your own objects or use the ones provided
  * Flexible way to create your own effect
  * Android 1.5+ support
+ 
+# Upcoming Changes
+ * Ken Burns Effect
 
 # Downloads
 [![Demo app](assets/images/android-app-on-google-play.png)](https://play.google.com/store/apps/details?id=it.dex.dexmovingimageview)
@@ -20,8 +25,6 @@ DMIV aims to provide a flexible and customizable instrument for automated images
 ![Screenshot](/assets/screenshot/scroll.png)
 ![Screenshot](/assets/screenshot/move_tester.png)
 ![Screenshot](/assets/screenshot/move_tester_open.png)
-
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DexMovingImageView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1601)
 
 
 
