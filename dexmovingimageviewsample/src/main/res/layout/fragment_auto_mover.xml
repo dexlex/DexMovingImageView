@@ -24,12 +24,12 @@
     <it.dex.movingimageviewlib.DexMovingImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        dex:angle="45"
-        dex:drawer="scale|translate|rotate"
-        dex:evaluator="timeBased"
-        dex:generator="base"
-        dex:images_array="@array/images"
-        dex:loop="true"
-        dex:zoom="2" />
+        dex:dex_angle="45"
+        dex:dex_drawer="scale|translate|rotate"
+        dex:dex_evaluator="timeBased"
+        dex:dex_generator="base"
+        dex:dex_images_array="@array/images"
+        dex:dex_loop="true"
+        dex:dex_zoom="2" />
 
 </FrameLayout>

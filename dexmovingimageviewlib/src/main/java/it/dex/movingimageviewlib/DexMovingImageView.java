@@ -78,21 +78,21 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
             int N = a.getIndexCount();
             for (int i = 0; i < N; ++i) {
                 int attr = a.getIndex(i);
-                if (attr == R.styleable.DexMovingImageView_zoom) {
+                if (attr == R.styleable.DexMovingImageView_dex_zoom) {
                     setZoom(a.getFloat(attr, getZoom()));
-                } else if (attr == R.styleable.DexMovingImageView_minZoom) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_minZoom) {
                     setMinZoom(a.getFloat(attr, getMinZoom()));
-                } else if (attr == R.styleable.DexMovingImageView_maxZoom) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_maxZoom) {
                     setMaxZoom(a.getFloat(attr, getMaxZoom()));
-                } else if (attr == R.styleable.DexMovingImageView_angle) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_angle) {
                     setAngle(a.getFloat(attr, getAngle()));
-                } else if (attr == R.styleable.DexMovingImageView_minAngle) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_minAngle) {
                     setMinAngle(a.getFloat(attr, getMinAngle()));
-                } else if (attr == R.styleable.DexMovingImageView_maxAngle) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_maxAngle) {
                     setMaxAngle(a.getFloat(attr, getMaxAngle()));
-                } else if (attr == R.styleable.DexMovingImageView_speed) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_speed) {
                     setFrequency(1 / a.getFloat(attr, getFrequency()) * 1000);
-                } else if (attr == R.styleable.DexMovingImageView_drawer) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_drawer) {
                     if ((a.getInt(attr, 1) & 0) == 0) {
                         addDrawerType(DRAWERS.SCALE.getDefaultName(), DRAWERS.SCALE);
                     }
@@ -102,7 +102,7 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
                     if ((a.getInt(attr, 0) & 2) == 2) {
                         addDrawerType(DRAWERS.ROTATE.getDefaultName(), DRAWERS.ROTATE);
                     }
-                } else if (attr == R.styleable.DexMovingImageView_generator) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_generator) {
                     try {
                         setValuesGeneratorType(VALUESGENERATORS.map(a.getInteger(attr, VALUESGENERATORS.BASE.getType())));
                     } catch (IllegalArgumentException | UnsupportedOperationException e) {
@@ -114,7 +114,7 @@ public class DexMovingImageView extends DexCrossFadeImageView implements Evaluat
                             ex.printStackTrace();
                         }
                     }
-                } else if (attr == R.styleable.DexMovingImageView_evaluator) {
+                } else if (attr == R.styleable.DexMovingImageView_dex_evaluator) {
                     try {
                         setEvaluatorType(EVALUATORS.map(a.getInteger(attr, EVALUATORS.SIMPLE.getType())));
                     } catch (IllegalArgumentException | UnsupportedOperationException e) {

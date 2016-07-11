@@ -65,10 +65,10 @@ public class DexCrossFadeImageView extends ImageView {
     private void init(AttributeSet attrs) {
         if (attrs != null) {
             TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.DexCrossFadeImageView, 0, 0);
-            setTransitionDurationMillis(a.getInt(R.styleable.DexCrossFadeImageView_transition_duration_millis, transitionDurationMillis));
-            setStillImageDurationMillis(a.getInt(R.styleable.DexCrossFadeImageView_still_image_duration_millis, stillImageDurationMillis));
-            setLoop(a.getBoolean(R.styleable.DexCrossFadeImageView_loop, loop));
-            int intArrayRes = a.getResourceId(R.styleable.DexCrossFadeImageView_images_array, 0);
+            setTransitionDurationMillis(a.getInt(R.styleable.DexCrossFadeImageView_dex_transition_duration_millis, transitionDurationMillis));
+            setStillImageDurationMillis(a.getInt(R.styleable.DexCrossFadeImageView_dex_still_image_duration_millis, stillImageDurationMillis));
+            setLoop(a.getBoolean(R.styleable.DexCrossFadeImageView_dex_loop, loop));
+            int intArrayRes = a.getResourceId(R.styleable.DexCrossFadeImageView_dex_images_array, 0);
             if (intArrayRes != 0) {
                 TypedArray images = getResources().obtainTypedArray(intArrayRes);
                 drawables = new Drawable[images.length()];
