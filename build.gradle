@@ -20,7 +20,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    ftKit = '0.4.1'
+
     //Support Libraries dependencies
     supportDependencies = [
             percent               : "com.android.support:percent:${SUPPORT_LIBRARY}",
@@ -30,7 +30,7 @@ ext {
             recycler              : "com.android.support:recyclerview-v7:${SUPPORT_LIBRARY}",
             design                : "com.android.support:design:${SUPPORT_LIBRARY}",
             cardView              : "com.android.support:cardview-v7:${SUPPORT_LIBRARY}",
-            kitCore               : "com.52inc:52Kit-core:${ftKit}",
+       
 
             retrofitAdapter       : "com.squareup.retrofit2:retrofit-adapters:${RETROFIT_LIBRARY}",
             retrofitCore          : "com.squareup.retrofit2:retrofit:${RETROFIT_LIBRARY}",
