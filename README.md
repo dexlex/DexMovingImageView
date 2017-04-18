@@ -51,7 +51,7 @@ or the following using Maven:
 
 # Usage
 
-##Simple
+## Simple
 
 This section show you how to use the provided views without questioning how it works.
 
@@ -60,14 +60,14 @@ This library provides 2 views:
 * **DexCrossFadeImageView**: It allows you to add a fading transition when changing the source drawable with specified transition duration in milliseconds. It also provides a way to slideshow multiple images;
 * **DexMovingImageView**: It extends the DexCrossFadeImageView, so it inherits every property from it and add lots of new features.
 
-###DexCrossFadeImageView
+### DexCrossFadeImageView
 The view has 2 parameters:
 
  * TransitionDurationMillis (default: 300)
  * StillImageDurationMillis (default: 3000)
 
 They both have their own getters and setters.
-####Single Image
+#### Single Image
 First of all you can set your timings, if needed. Then you can start a transition by calling the following methods:
 
 ```java
@@ -75,7 +75,7 @@ First of all you can set your timings, if needed. Then you can start a transitio
     dexCrossFadeImageView.setFadingImageDrawable(myDrawable);
     dexCrossFadeImageView.setFadingImageBitmap(myBitmap);
 ```
-####Multiple Images
+#### Multiple Images
 Or you can set a List or an array of:
 
  * Resources (integers)
@@ -98,7 +98,7 @@ You can do the same using the images_array attribute:
 
 You can pause the transition by calling the pause() method.
 
-###DexMovigImageView
+### DexMovigImageView
 
 You can treat it like any other ImageView or DexCrossFadeImageView, but you need to add the following to set the desired behaviour:
 
@@ -108,7 +108,7 @@ You can treat it like any other ImageView or DexCrossFadeImageView, but you need
 
 The next two subsections show you how to add two popular view in your app.
 
-####Calendar-like View
+#### Calendar-like View
 This is the simplest way to use it. Simply add the following attributes to your view:
 
 ```xml
@@ -123,7 +123,7 @@ This is the simplest way to use it. Simply add the following attributes to your 
 
 Change zoom value to increase or decrease scaling: this way you can enhance the scrolling effect.
 
-####NewsStand-like View
+#### NewsStand-like View
 This is the same as above, but with different evaluator and generator:
 
 ```xml
@@ -169,7 +169,7 @@ Use the OnEventOccurred interface to listen to every change during execution. Yo
     }
 ```
 
-##Advanced
+## Advanced
 This section show you how to add any new unimplemented feature.
 First af all you need to know how it works: a DexMovingImageView is composed by 3 main elements that describe how to do something:
 
@@ -179,7 +179,7 @@ First af all you need to know how it works: a DexMovingImageView is composed by 
 
 Everytime the view is invalidated, the evaluator evaluate new basic values, ValuesGenerator changes them and drawer apply the new values to the view.
 
-###Evaluators
+### Evaluators
 
 Currently there are 4 kind of evaluator in this library:
 
@@ -286,7 +286,7 @@ or
         dex:transition_duration_millis="1000" />
 ```
 
-###Values Generators
+### Values Generators
 
 The provided values generators are:
 
@@ -359,7 +359,7 @@ or
         dex:transition_duration_millis="1000" />
 ```
 
-###Drawers
+### Drawers
 
 Three properties can be modified based on the generated values. So you can use the following:
 
