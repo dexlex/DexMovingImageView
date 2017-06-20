@@ -38,17 +38,6 @@ DexMovingImageView is pushed to Maven Central as an AAR. Add the following to bu
     }
 ```
 
-or the following using Maven:
-
-```xml
-    <dependency>
-        <groupid>it.dex.dexmovingimageview</groupid>
-        <artifactid>dexmovingimageviewlib</artifactid>
-        <version>0.1.0</version>
-        <type>aar</type>
-    </dependency>
-```
-
 # Usage
 
 ##Simple
@@ -90,10 +79,10 @@ You can do the same using the images_array attribute:
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        dex:images_array="@array/my_images"
-        dex:loop="true"
-        dex:still_image_duration_millis="1000"
-        dex:transition_duration_millis="500" />
+        dex:dex_images_array="@array/my_images"
+        dex:dex_loop="true"
+        dex:dex_still_image_duration_millis="1000"
+        dex:dex_transition_duration_millis="500" />
 ```
 
 You can pause the transition by calling the pause() method.
@@ -115,10 +104,10 @@ This is the simplest way to use it. Simply add the following attributes to your 
     <it.dex.movingimageviewlib.DexMovingImageView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        dex:zoom="2.0"
-        dex:evaluator="scrollBased"
-        dex:generator="base"
-        dex:drawer="scale|translate" />
+        dex:dex_zoom="2.0"
+        dex:dex_evaluator="scrollBased"
+        dex:dex_generator="base"
+        dex:dex_drawer="scale|translate" />
 ```
 
 Change zoom value to increase or decrease scaling: this way you can enhance the scrolling effect.
@@ -130,15 +119,15 @@ This is the same as above, but with different evaluator and generator:
     <it.dex.movingimageviewlib.DexMovingImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        dex:evaluator="timeBased"
-        dex:images_array="@array/my_images"
-        dex:generator="zoomed"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:drawer="scale|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:dex_evaluator="timeBased"
+        dex:dex_images_array="@array/my_images"
+        dex:dex_generator="zoomed"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_drawer="scale|translate"
+        dex:dex_still_image_duration_millis="3000"
+        dex:dex_transition_duration_millis="1000" />
 ```
 
 Use the OnEventOccurred interface to listen to every change during execution. You can set a new CrossFading image or change tint or change angle, etc. The events returned are:
@@ -257,15 +246,15 @@ A DexMovingImageView has one only Evaluator, so you can specify the enum value o
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        dex:evaluator="timeBased"
-        dex:images_array="@array/my_images"
-        dex:generator="zoomed"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:drawer="scale|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:dex_evaluator="timeBased"
+        dex:dex_images_array="@array/my_images"
+        dex:dex_generator="zoomed"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_drawer="scale|translate"
+        dex:dex_still_image_duration_millis="3000"
+        dex:dex_transition_duration_millis="1000" />
 ```
 
 or
@@ -275,15 +264,15 @@ or
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        dex:evaluator="it.dex.movingimageview.MyEvaluator"
-        dex:images_array="@array/my_images"
-        dex:generator="zoomed"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:drawer="scale|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:dex_evaluator="it.dex.movingimageview.MyEvaluator"
+        dex:dex_images_array="@array/my_images"
+        dex:dex_generator="zoomed"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_drawer="scale|translate"
+        dex:dex_still_image_duration_millis="3000"
+        dex:dex_transition_duration_millis="1000" />
 ```
 
 ###Values Generators
@@ -330,15 +319,15 @@ A DexMovingImageView has one only ValuesGenerator, so you can specify the enum v
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        dex:evaluator="timeBased"
-        dex:images_array="@array/my_images"
-        dex:generator="zoomed"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:drawer="scale|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:dex_evaluator="timeBased"
+        dex:dex_images_array="@array/my_images"
+        dex:dex_generator="zoomed"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_drawer="scale|translate"
+        dex:dex_still_image_duration_millis="3000"
+        dex:dex_transition_duration_millis="1000" />
 ```
 
 or
@@ -348,15 +337,15 @@ or
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        dex:evaluator="timeBased"
-        dex:images_array="@array/my_images"
-        dex:generator="it.dex.movingimageview.MyValuesGenerator"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:drawer="scale|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:dex_evaluator="timeBased"
+        dex:dex_images_array="@array/my_images"
+        dex:dex_generator="it.dex.movingimageview.MyValuesGenerator"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_drawer="scale|translate"
+        dex:dex_still_image_duration_millis="3000"
+        dex:dex_transition_duration_millis="1000" />
 ```
 
 ###Drawers
@@ -374,15 +363,15 @@ A DexMovingImageView can have one or more Drawers, so you can specify the values
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/my_image"
-        dex:evaluator="timeBased"
-        dex:images_array="@array/my_images"
-        dex:generator="zoomed"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:drawer="scale|rotate|translate"
-        dex:still_image_duration_millis="3000"
-        dex:transition_duration_millis="1000" />
+        dex:dex_evaluator="timeBased"
+        dex:dex_images_array="@array/my_images"
+        dex:dex_generator="zoomed"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_drawer="scale|rotate|translate"
+        dex:dex_still_image_duration_millis="3000"
+        dex:dex_transition_duration_millis="1000" />
 ```
 
 Credits

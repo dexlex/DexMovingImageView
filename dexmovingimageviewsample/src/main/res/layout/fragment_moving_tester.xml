@@ -27,16 +27,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/google"
-        dex:evaluator="simple"
-        dex:generator="base"
-        dex:angle="130"
-        dex:loop="true"
-        dex:zoom="1.65"
-        dex:minZoom="1.0"
-        dex:maxZoom="3.0"
-        dex:drawer="scale|translate"
-        dex:still_image_duration_millis="6000"
-        dex:transition_duration_millis="2000" />
+        dex:dex_evaluator="simple"
+        dex:dex_generator="base"
+        dex:dex_angle="130"
+        dex:dex_loop="true"
+        dex:dex_zoom="1.65"
+        dex:dex_minZoom="1.0"
+        dex:dex_maxZoom="3.0"
+        dex:dex_drawer="scale|translate"
+        dex:dex_still_image_duration_millis="6000"
+        dex:dex_transition_duration_millis="2000" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/values_card_view"

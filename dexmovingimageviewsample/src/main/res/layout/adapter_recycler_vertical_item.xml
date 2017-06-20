@@ -33,10 +33,10 @@
         <it.dex.movingimageviewlib.DexMovingImageView
             android:id="@+id/image"
             style="@style/DexScrollImageViewStyle"
-            dex:zoom="2"
-            dex:drawer="scale|translate"
-            dex:evaluator="timeBased"
-            dex:generator="base"
+            dex:dex_zoom="2"
+            dex:dex_drawer="scale|translate"
+            dex:dex_evaluator="timeBased"
+            dex:dex_generator="base"
             android:layout_height="match_parent"
             android:layout_centerInParent="true" />
 

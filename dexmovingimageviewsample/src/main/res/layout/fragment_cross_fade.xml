@@ -28,9 +28,9 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:src="@drawable/material"
-        dex:loop="true"
-        dex:still_image_duration_millis="1000"
-        dex:transition_duration_millis="500" />
+        dex:dex_loop="true"
+        dex:dex_still_image_duration_millis="1000"
+        dex:dex_transition_duration_millis="500" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"

@@ -15,46 +15,46 @@
   -->
 
 <resources>
-    <attr name="transition_duration_millis" format="reference|integer" />
-    <attr name="still_image_duration_millis" format="reference|integer" />
-    <attr name="images_array" format="reference" />
-    <attr name="loop" format="boolean" />
+    <attr name="dex_transition_duration_millis" format="reference|integer" />
+    <attr name="dex_still_image_duration_millis" format="reference|integer" />
+    <attr name="dex_images_array" format="reference" />
+    <attr name="dex_loop" format="boolean" />
 
     <declare-styleable name="DexCrossFadeImageView">
-        <attr name="transition_duration_millis" />
-        <attr name="still_image_duration_millis" />
-        <attr name="images_array" />
-        <attr name="loop" />
+        <attr name="dex_transition_duration_millis" />
+        <attr name="dex_still_image_duration_millis" />
+        <attr name="dex_images_array" />
+        <attr name="dex_loop" />
     </declare-styleable>
 
     <declare-styleable name="DexMovingImageView">
-        <attr name="transition_duration_millis" />
-        <attr name="still_image_duration_millis" />
-        <attr name="images_array" />
+        <attr name="dex_transition_duration_millis" />
+        <attr name="dex_still_image_duration_millis" />
+        <attr name="dex_images_array" />
 
-        <attr name="drawer">
+        <attr name="dex_drawer">
             <flag name="scale" value="0" />
             <flag name="translate" value="1" />
             <flag name="rotate" value="2" />
         </attr>
-        <attr name="generator" format="enum|string">
+        <attr name="dex_generator" format="enum|string">
             <enum name="base" value="0" />
             <enum name="angled" value="1" />
             <enum name="zoomed" value="2" />
         </attr>
-        <attr name="evaluator" format="enum|string">
+        <attr name="dex_evaluator" format="enum|string">
             <enum name="simple" value="0" />
             <enum name="scrollBased" value="1" />
             <enum name="timeBased" value="2" />
             <enum name="gyroscopeBased" value="3" />
         </attr>
 
-        <attr name="zoom" format="reference|float" />
-        <attr name="minZoom" format="reference|float" />
-        <attr name="maxZoom" format="reference|float" />
-        <attr name="angle" format="reference|float" />
-        <attr name="minAngle" format="reference|float" />
-        <attr name="maxAngle" format="reference|float" />
-        <attr name="speed" format="reference|float" />
+        <attr name="dex_zoom" format="reference|float" />
+        <attr name="dex_minZoom" format="reference|float" />
+        <attr name="dex_maxZoom" format="reference|float" />
+        <attr name="dex_angle" format="reference|float" />
+        <attr name="dex_minAngle" format="reference|float" />
+        <attr name="dex_maxAngle" format="reference|float" />
+        <attr name="dex_speed" format="reference|float" />
     </declare-styleable>
 </resources>

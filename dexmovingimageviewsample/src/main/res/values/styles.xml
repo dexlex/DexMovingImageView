@@ -56,11 +56,11 @@
     </style>
 
     <style name="DexScrollImageViewStyle">
-        <item name="zoom">2</item>
-        <item name="angle">0</item>
-        <item name="drawer">scale|translate</item>
-        <item name="generator">base</item>
-        <item name="evaluator">scrollBased</item>
+        <item name="dex_zoom">2</item>
+        <item name="dex_angle">0</item>
+        <item name="dex_drawer">scale|translate</item>
+        <item name="dex_generator">base</item>
+        <item name="dex_evaluator">scrollBased</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

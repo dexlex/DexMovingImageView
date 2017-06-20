@@ -24,15 +24,15 @@
     <it.dex.movingimageviewlib.DexMovingImageView
         android:id="@+id/dex_moving_image_view"
         android:layout_width="match_parent"
-        dex:evaluator="timeBased"
-        dex:generator="angled"
-        dex:minZoom="1.75"
-        dex:transition_duration_millis="1000"
-        dex:maxZoom="2.0"
+        dex:dex_evaluator="timeBased"
+        dex:dex_generator="angled"
+        dex:dex_minZoom="1.75"
+        dex:dex_transition_duration_millis="1000"
+        dex:dex_maxZoom="2.0"
         android:src="@drawable/material"
-        dex:zoom="2.0"
-        dex:speed="40"
-        dex:drawer="scale|translate"
+        dex:dex_zoom="2.0"
+        dex:dex_speed="40"
+        dex:dex_drawer="scale|translate"
         android:layout_height="wrap_content" />
 
     <android.support.v7.widget.CardView
